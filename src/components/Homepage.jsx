@@ -135,50 +135,58 @@ const Homepage = () => {
 
 
 
-    <div className='container bg-dark'>
+    <div className='container' style={{backgroundColor:'rgb(0,0,0)'}}>
                     <div className='text-center'>
-                        <div><h6 className=''>CARDIFY AFRICA WALLETS</h6></div>
-                        <div><h1>Save, Spend & Exchange</h1></div>
-                        <div><p>Unlock more ways to spend, save and exchange on Cardify Africa wallets.</p></div>
+                        <div><h6 style={{color:'rgb(5,121,40)'}}>CARDIFY AFRICA WALLETS</h6></div>
+                        <div><h1 className='text-light'>Save, Spend & Exchange</h1></div>
+                        <div><p className='text-light'>Unlock more ways to spend, save and exchange on Cardify Africa wallets.</p></div>
                     </div>
 
 
 
             <div>
                   {/* left bar */}
-                    <div>
+                    <div className=''>
 
 
                           {/* receive and save optio */}
-                          <div>
+                          <div className='firscard my-5 ' style={{backgroundColor:'rgb(22,22,22)'}}>
                               <div>
                                 {/* icon */}
-                                <h5>RECEIVE & SAVE</h5>
+                                <h5 className='text-primary'>RECEIVE & SAVE</h5>
                               </div>
-                              <p>Cardify Africa NGN and USD wallets allow you <br />  receive, save across multiple digital wallets.</p>
+                              <p className='text-light'>Cardify Africa NGN and USD wallets allow you <br />  receive, save across multiple digital wallets.</p>
                           </div>
 
 
 
-                          <div>
-                              <div>
+                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)', borderRadius:'20px' }}>
+                              <div >
                                 {/* icon */}
-                                <h5>SEND WITH CARDIFY</h5>
+                                <h5 className='text-primary'>SEND WITH CARDIFY</h5>
                               </div>
-                              <p>Leveraging various digital wallets, send funds <br /> to other cardify users as well as external <br /> wallets seamlessly.</p>
+                              <p className='text-light'>Leveraging various digital wallets, send funds <br /> to other cardify users as well as external <br /> wallets seamlessly.</p>
                           </div>
 
 
 
 
-                          <div>
+                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)',borderRadius:'20px', padding:'10px' }} >
                               <div>
                                 {/* icon */}
-                                <h5>SPEND YOUR WALLETS</h5>
+                                <h5 className='text-primary'>SPEND YOUR WALLETS</h5>
                               </div>
-                              <p>Be limitless by using your Cardify wallets to <br /> fund your dollar card, pay bills and even <br />exchange.</p>
+                              <p className='text-light'>Be limitless by using your Cardify wallets to <br /> fund your dollar card, pay bills and even <br />exchange.</p>
                           </div>
 
+                    </div>
+
+
+
+
+                    {/* right bar */}
+                    <div>
+                      
                     </div>
             </div>
 
