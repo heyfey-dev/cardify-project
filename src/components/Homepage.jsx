@@ -4,6 +4,7 @@ import appstore from './images/download-app-store-black.svg'
 import playstore from './images/download-google-store-black.svg'
 import message from './images/message.svg'
 import secondicon from './images/secondicon.svg'
+import cardifyapp from './images/Cardifyapp.gif'
 
 
 
@@ -135,7 +136,7 @@ const Homepage = () => {
 
 
 
-    <div className='container' style={{backgroundColor:'rgb(0,0,0)'}}>
+    <div className='container' style={{backgroundColor:'rgb(0,0,0)',}}>
                     <div className='text-center'>
                         <div><h6 style={{color:'rgb(5,121,40)'}}>CARDIFY AFRICA WALLETS</h6></div>
                         <div><h1 className='text-light'>Save, Spend & Exchange</h1></div>
@@ -144,7 +145,7 @@ const Homepage = () => {
 
 
 
-            <div>
+            <div style={{display:'flex',justifyContent:'center', padding:'30px'} }className='container'>
                   {/* left bar */}
                     <div className=''>
 
@@ -185,8 +186,12 @@ const Homepage = () => {
 
 
                     {/* right bar */}
-                    <div>
-                      
+                    <div style={{backgroundColor:'rgb(22,22,22)', border:'1px solid white'}}>
+                        <div className='my-5 mt-5'>
+                            <div style={{backgroundColor:'black'}}>
+                              <img src={cardifyapp} style={{width:'30rem'}}/>
+                            </div>
+                        </div>
                     </div>
             </div>
 
