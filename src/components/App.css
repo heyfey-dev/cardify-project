@@ -1,0 +1,120 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+
+.card-logo {
+     /* Ensures the image does not exceed its original size */
+   width: 9rem !important;   /* Centers the image horizontally */
+  }
+  .navbar{
+    /* border: 2px solid black !important; */
+    margin-top: 30px;
+    border-radius: 15px ;
+    padding: 20px;
+    background-color: #eefdf8;
+  }
+  .btn2{
+     background-color: #18cc3f;
+     width: 7rem;
+     height: 60px;
+     border: none;
+  }
+  .btn2:hover{
+    background-color: #0BA15B;
+  }
+  
+.home-cnt{
+  margin-top: 8%;
+  
+}
+.thiscnt{
+  font-size: 50px;
+}
+.thatcnt{
+  color: rgb(24,204,63);
+}
+.appplay img{
+  width: 250px;
+  
+}
+.appplay{
+  gap: 20px;
+  
+}
+
+main{
+  margin-top: 7rem;
+}
+
+/* Add this CSS to your stylesheet or in a style tag in your component */
+
+/* Add this CSS to your stylesheet or in a style tag in your component */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td .Bigt {
+  text-align: center; /* Center align the content within cells */
+  font-weight: 600;
+  font-size: 80px;
+}
+
+/* Remove the left border for the first cell in each row */
+.table tr td:first-child {
+  border-left: 0 !important;
+}
+
+.table tr td:last-child {
+  border-right: 0 !important;
+}
+
+/* Set line height for the divs inside the cells */
+.table td > div {
+  line-height: 80px !important; /* Adjust the line height as needed */
+}
+
+
+ 
