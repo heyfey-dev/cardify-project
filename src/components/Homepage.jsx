@@ -145,13 +145,13 @@ const Homepage = () => {
 
 
 
-            <div style={{display:'flex',justifyContent:'center', padding:'30px'} }className='container'>
+            <div style={{display:'flex', padding:'80px', gap:'10rem'} }className='container'>
                   {/* left bar */}
                     <div className=''>
 
 
                           {/* receive and save optio */}
-                          <div className='firscard my-5 ' style={{backgroundColor:'rgb(22,22,22)'}}>
+                          <div className='firscard my-5 ' style={{backgroundColor:'rgb(22,22,22)', padding:'50px', borderRadius:'20px', alignItems:'center'}}>
                               <div>
                                 {/* icon */}
                                 <h5 className='text-primary'>RECEIVE & SAVE</h5>
@@ -161,7 +161,7 @@ const Homepage = () => {
 
 
 
-                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)', borderRadius:'20px' }}>
+                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)', borderRadius:'20px', padding:'50px' }}>
                               <div >
                                 {/* icon */}
                                 <h5 className='text-primary'>SEND WITH CARDIFY</h5>
@@ -172,7 +172,7 @@ const Homepage = () => {
 
 
 
-                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)',borderRadius:'20px', padding:'10px' }} >
+                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)',borderRadius:'20px', padding:'50px' }} >
                               <div>
                                 {/* icon */}
                                 <h5 className='text-primary'>SPEND YOUR WALLETS</h5>
@@ -186,10 +186,10 @@ const Homepage = () => {
 
 
                     {/* right bar */}
-                    <div style={{backgroundColor:'rgb(22,22,22)', border:'1px solid white'}}>
-                        <div className='my-5 mt-5'>
-                            <div style={{backgroundColor:'black'}}>
-                              <img src={cardifyapp} style={{width:'30rem'}}/>
+                    <div style={{backgroundColor:'rgb(22,22,22)', marginTop:'50px'}}>
+                        <div  className=' p-4' style={{height:'5rem'}}>
+                            <div style={{backgroundColor:'black', borderRadius:'20px', marginTop:'50px'}}>
+                              <img src={cardifyapp} style={{width:'25rem', height:'30rem'}}/>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,39 @@ const Homepage = () => {
 
 
 
+       
+
+
+
+
+
     </div>
+
+
+
+    <div>
+              {/* left side */}
+              <div><img src="" alt="" /></div>
+              {/* right side */}
+              <div>
+                    <h1>Cardify Wallets</h1>
+                    <div>
+                      <p>Leverage our fiat and digital wallet options to save, spend and exchange.</p>
+
+                      <p>Learn more about the wallets</p>
+                    </div>
+
+                    <div>
+                      <ul>
+                        <li>NGN Wallet</li>
+                        <li>USD wallet</li>
+                        <li>GBP wallet (coming soon)</li>
+                      </ul>
+                    </div>
+
+                    <a href="">Goto Cardify Wallets</a>
+              </div>
+        </div>
     </div>
   );
 }
