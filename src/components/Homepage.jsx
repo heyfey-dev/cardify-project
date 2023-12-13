@@ -5,7 +5,8 @@ import playstore from './images/download-google-store-black.svg'
 import message from './images/message.svg'
 import secondicon from './images/secondicon.svg'
 import cardifyapp from './images/Cardifyapp.gif'
-
+import cardifywallet from './images/cardifywallets.jpg'
+import cardifycards from './images/paybills.png'
 
 
 
@@ -210,15 +211,21 @@ const Homepage = () => {
 
 
 
-    <div>
-              {/* left side */}
-              <div><img src="" alt="" /></div>
-              {/* right side */}
-              <div>
-                    <h1>Cardify Wallets</h1>
-                    <div>
-                      <p>Leverage our fiat and digital wallet options to save, spend and exchange.</p>
+    <div className='container d-flex' style={{gap:'5rem' ,marginTop:'6rem'}} >
+                        
+                          {/* left side */}
 
+
+              <div><img src={cardifywallet} style={{width:'35rem', borderRadius:'30px'}} /></div>
+
+
+                          {/* right side */}
+
+
+              <div className='' style={{marginTop:'70px'}}>
+                    <h1 className='my-5' style={{fontSize:'50px', fontWeight:'bold'}}>Cardify Wallets</h1>
+                    <div>
+                      <p>Leverage our fiat and digital wallet options to save, spend and      <a href="">here</a> <br/>exchange.</p>
                       <p>Learn more about the wallets</p>
                     </div>
 
@@ -233,6 +240,55 @@ const Homepage = () => {
                     <a href="">Goto Cardify Wallets</a>
               </div>
         </div>
+
+
+
+
+
+        <div className='container d-flex' style={{gap:'5rem' ,marginTop:'6rem'}} >
+                        
+                        {/* left side */}
+                  <div className='' style={{marginTop:'70px'}}>
+                  <h1 className='my-5' style={{fontSize:'50px', fontWeight:'bold'}}>Cardify Virtual Dollar Cards!!!</h1>
+                  <div>
+                    <p>Pay for monthly subscriptions to services like Apple Music, Spotify, and Netflix
+                    as well as shopping/paying at your preferred online checkouts.</p>
+                    <p>Learn more about the wallets</p>
+                  </div>
+
+                  <div>
+                    <ul>
+                      <li>NGN & Stablecoins Funding</li>
+                      <li>Fund as low as 5USD</li>
+                      <li>Fund as low as 5USD</li>
+                    </ul>
+                  </div>
+
+                  <a href="">Goto Cardify Cards</a>
+            </div>
+
+           
+
+                        {/* right side */}
+
+                        <div><img src={cardifycards} style={{width:'35rem', borderRadius:'30px', backgroundColor:'rgb(247,224,205)', }} /></div>
+
+            
+      </div>
+
+
+
+
+
+      <div>
+          
+      </div>
+
+
+
+
+
+
     </div>
   );
 }
