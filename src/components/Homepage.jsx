@@ -11,6 +11,7 @@ import cardifycards from './images/paybills.png'
 
 
 import './App.css'
+import Homebuycodes from './H/Homebuycodes';
 
 const Homepage = () => {
 
@@ -280,7 +281,7 @@ const Homepage = () => {
 
 
 
-      
+      <Homebuycodes/> 
 
 
 
