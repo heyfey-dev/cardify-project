@@ -119,3 +119,12 @@ main{
 
  
 
+.custom-width {
+  max-width: 500px;
+  width: 100%; /* Ensure the width is responsive */
+}
+.custom-vouchers{
+  height: 230px;
+  width: 100%;
+  max-width: 500px;
+}

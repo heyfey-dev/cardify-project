@@ -10,8 +10,9 @@ import cardifycards from './images/paybills.png'
 
 
 
+
 import './App.css'
-import Homebuycodes from './H/Homebuycodes';
+import Homebuycodes from './Homebuycodes';
 
 const Homepage = () => {
 
@@ -277,6 +278,11 @@ const Homepage = () => {
             
       </div>
 
+
+      
+
+
+      
 
 
 
