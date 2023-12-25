@@ -5,7 +5,8 @@ import { TiTicket } from "react-icons/ti"
 import './App.css'
 import cardifydigitalbusinesscards from "./images/cardifydigitalbusinesscards.png"
 import paybills from './images/paybills.png'
-import Frequentlyasked from "./Videocomponent";
+
+import Videocomponent from "./Videocomponent";
 const Homebuycodes = () => {
   return (
     <div>
@@ -70,7 +71,7 @@ const Homebuycodes = () => {
      
       <div>
         <h4>Vouchers</h4>
-        <p>Cardify Bills allow you purchase the vouchers you <br />   need, from mtn to other network vouchers to <br /> lycamobile vouchers, we 've got you covered. Always!</p>
+        <p>Cardify Bills allow you purchase the vouchers you <br />   need, from mtn to other network vouchers to <br /> lycamobile vouchers, we've got you covered. Always!</p>
       </div>
     </div>
   </div>
@@ -131,7 +132,7 @@ const Homebuycodes = () => {
 
              </div>
 
-        <Frequentlyasked/>
+        <Videocomponent/>
 
     </div>
   )
