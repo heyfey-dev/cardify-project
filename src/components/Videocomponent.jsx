@@ -49,7 +49,7 @@ const Videocomponent = () => {
             </h2>
             <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
               <div className="accordion-body">
-                To sign up for Cardify, visit our website and click on the "Sign Up" button. Follow the on-screen instructions to create your account.
+                To sign up for Cardify, visit our website and click on the Sign Up button. Follow the on-screen instructions to create your account.
               </div>
             </div>
           </div>
