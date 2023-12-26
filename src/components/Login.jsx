@@ -4,8 +4,8 @@ const Login = () => {
   return (
     <div>
          <div className="row justify-content-center mt-5">
-                 <div className="col-md-6">
-                         <div className="card">
+                 <div className="col-md-5">
+                         <div className="card border-0">
                                  <div className="card-body">
 
 
