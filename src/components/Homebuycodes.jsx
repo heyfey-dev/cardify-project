@@ -71,7 +71,7 @@ const Homebuycodes = () => {
      
       <div>
         <h4>Vouchers</h4>
-        <p>Cardify Bills allow you purchase the vouchers you <br />   need, from mtn to other network vouchers to <br /> lycamobile vouchers, we've got you covered. Always!</p>
+        <p>Cardify Bills allow you purchase the vouchers you <br />   need, from mtn to other network vouchers to <br /> lycamobile vouchers, weve got you covered. Always!</p>
       </div>
     </div>
   </div>
