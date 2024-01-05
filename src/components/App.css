@@ -146,3 +146,41 @@ main{
   margin-top: 20px;
 }
 
+
+
+
+
+
+
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar-option {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-option:hover {
+  background-color: #555;
+}
+
+.sidebar-option.active {
+  background-color: #555;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
