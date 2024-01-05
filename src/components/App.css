@@ -133,3 +133,16 @@ main{
 .error{
   color: red
 }
+
+
+.custom-width {
+  max-width: 550px; /* Adjust the value to your preferred width */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
