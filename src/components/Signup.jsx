@@ -47,7 +47,7 @@ const Signup = () => {
     <Container className=" custom-width mt-5">
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
         <div><img src={cardifylogo} style={{ width: "6rem" }} /></div>
-        <div><p className="text-center mb-4">{step}</p></div>
+        <div className='mt-4'><p className="text-center mb-4">{step}</p></div>
       </div>
 
       <div>
