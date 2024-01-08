@@ -45,9 +45,8 @@ const Signup = () => {
 
   return (
     <Container className=" custom-width mt-5">
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+      <div style={{ display: "", alignItems: "center" }}>
         <div><img src={cardifylogo} style={{ width: "6rem" }} /></div>
-        <div style={{marginTop:"20px"}}><p className="text-center mb-5">{step}</p></div>
       </div>
 
       <div>
@@ -121,7 +120,7 @@ const Signup = () => {
         <Carousel.Item>
           <Form onSubmit={formik.handleSubmit}>
             <p>YOUR IDENTIFIER</p>
-            
+            <h6 style={{fontSize:"12px"}}>Your username and password must be unique.</h6>
             <Form.Group controlId="username">
               <Form.Label className='fw-bold'>Username</Form.Label>
               <Form.Control
