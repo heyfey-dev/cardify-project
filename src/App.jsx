@@ -1,16 +1,16 @@
 // import React from 'react'
 
-import Homepage from "./components/Homepage"
+// import Homepage from "./components/Homepage"
 // import Login from "./components/Login"
 // import Dashboard from "./components/Dahboard"
-// import Signup from "./components/Signup"
+import Signup from "./components/Signup"
 
 const App = () => {
   return (
     <div>
-    {/* <Signup/> */}
+    <Signup/>
     {/* <Dashboard/> */}
-      <Homepage/>
+      {/* <Homepage/> */}
     </div>
   )
 }
