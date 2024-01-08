@@ -1,6 +1,6 @@
 import  { useState } from 'react';
-import './App.css'; // Import your CSS file for styling
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import './App.css';
+
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('dashboard');
@@ -17,8 +17,9 @@ const Dashboard = () => {
           className={`sidebar-option ${selectedOption === 'dashboard' && 'active'}`}
           onClick={() => handleOptionClick('dashboard')}
         >
-          Dashboard
+          Dashboard and contents
         </div>
+      
         <div
           className={`sidebar-option ${selectedOption === 'profile' && 'active'}`}
           onClick={() => handleOptionClick('profile')}
