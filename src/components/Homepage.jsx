@@ -7,7 +7,7 @@ import secondicon from './images/secondicon.svg'
 import cardifyapp from './images/Cardifyapp.gif'
 import cardifywallet from './images/cardifywallets.jpg'
 import cardifycards from './images/paybills.png'
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -40,8 +40,8 @@ const Homepage = () => {
                       </div>
 
                       <div className=' btns gap-3 d-flex flex-column flex-md-row gap-3'>
-                            <button className='btn '>Log in</button>
-                            <button className='btn2 '>Sign up</button>
+                            <button className='btn '><Link to='/login'>Login</Link></button>
+                            <button className='btn2 '><Link to='/signup'>Sign up</Link></button>
                       </div>
                 </div>
       

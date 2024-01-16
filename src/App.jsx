@@ -1,18 +1,21 @@
-// import React from 'react'
 
-// import Homepage from "./components/Homepage"
-// import Login from "./components/Login"
-// import Dashboard from "./components/Dahboard"
-import Signup from "./components/Signup"
+import { Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Homepage from './components/Homepage'
+import Signup from './components/Signup';
 
 const App = () => {
   return (
     <div>
-    <Signup/>
-    {/* <Dashboard/> */}
-      {/* <Homepage/> */}
+      <Routes>
+      
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={<Login />} />
+        
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

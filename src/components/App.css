@@ -140,7 +140,7 @@ main{
   margin: 0 auto; /* Center the form horizontally */
 }
 
-.button-container {
+.buttom-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;

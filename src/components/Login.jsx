@@ -1,5 +1,7 @@
 
 import { useFormik } from 'formik';
+import {Link} from 'react-router-dom'
+
 import * as Yup from 'yup';
 import './App.css'
 
@@ -93,7 +95,7 @@ const Login = () => {
                             </div>
 
 
-                                <div className="my-3 fw-bold">New to Cardify? <a href="" style={{color:"rgb(24,152,29)",}}>Register now!</a></div>
+                                <div className="my-3 fw-bold">New to Cardify? <Link to='/signup'  style={{color:"rgb(24,152,29)",}}></Link></div>
                                 <div className="fw-bold">Forogt password? <a href=""style={{color:"rgb(24,152,29)"}}>Click here</a></div>
                 
               </form>
