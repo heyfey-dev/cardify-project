@@ -95,7 +95,7 @@ const Login = () => {
                             </div>
 
 
-                                <div className="my-3 fw-bold">New to Cardify? <Link to='/signup'  style={{color:"rgb(24,152,29)",}}></Link></div>
+                                <div className="my-3 fw-bold">New to Cardify? <Link to='/auth/signup'  style={{color:"rgb(24,152,29)",}}>Register now</Link></div>
                                 <div className="fw-bold">Forogt password? <a href=""style={{color:"rgb(24,152,29)"}}>Click here</a></div>
                 
               </form>

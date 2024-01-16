@@ -243,7 +243,7 @@ const Signup = () => {
 
       <div style={{marginTop:"30px"}}>
 
-                   <p>Already have a Cardify account? <Link to='/auth/login'  style={{ color: 'rgb(39,174,96)' }}></Link></p>
+                   <p>Already have a Cardify account? <Link to='/auth/login'  style={{ color: 'rgb(39,174,96)' }}>Sign in instead</Link></p>
 
       </div>
     </Container>

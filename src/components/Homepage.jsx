@@ -40,8 +40,8 @@ const Homepage = () => {
                       </div>
 
                       <div className=' btns gap-3 d-flex flex-column flex-md-row gap-3'>
-                            <button className='btn '><Link to='/login'>Login</Link></button>
-                            <button className='btn2 '><Link to='/signup'>Sign up</Link></button>
+                            <button className='btn '><Link className='text-decoration-none' style={{color:"black", fontWeight:"bold", fontSize:'20px'}} to='/auth/login'>Login</Link></button>
+                            <button className='btn2 '><Link className='text-decoration-none' style={{color:"white", fontWeight:'bold',  fontSize:'20px'}} to='/auth/signup'>Sign up</Link></button>
                       </div>
                 </div>
       
