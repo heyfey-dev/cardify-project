@@ -64,7 +64,7 @@ const Dashboard = () => {
   );
 };
 
-// Sample content components
+
 const Overview = () => <div>Overview Content</div>;
 const Systems = () => <div>Systems Content</div>;
 const Bills = () => <div>Bills Content</div>;
