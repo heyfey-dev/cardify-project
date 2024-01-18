@@ -2,6 +2,7 @@ import  { useState } from 'react';
 import './App.css';
 
 
+
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('dashboard');
 
@@ -15,54 +16,72 @@ const Dashboard = () => {
       <div className="sidebar">
         <div
           className={`sidebar-option ${selectedOption === 'dashboard' && 'active'}`}
-          onClick={() => handleOptionClick('dashboard')}
+          onClick={() => handleOptionClick('Overview')}
         >
-          Dashboard and contents
+          overview
         </div>
       
         <div
           className={`sidebar-option ${selectedOption === 'profile' && 'active'}`}
-          onClick={() => handleOptionClick('profile')}
+          onClick={() => handleOptionClick('Systems')}
         >
-          Profile
+          systems
         </div>
         <div
           className={`sidebar-option ${selectedOption === 'settings' && 'active'}`}
-          onClick={() => handleOptionClick('settings')}
+          onClick={() => handleOptionClick('Bills')}
         >
-          Settings
+          bills
         </div>
         <div className={`sidebar-option ${selectedOption === `users` && `active`}`}
-            onClick={() => handleOptionClick('users')}
+            onClick={() => handleOptionClick('Prices')}
         >
-        Users
+        prices
+        </div>
+
+        <div
+            className={`sidebar-option ${selectedOption === 'dashboard' && 'active'}`}
+            onClick={() => handleOptionClick('History')}
+
+        >
+            History
         </div>
       </div>
 
       {/* Right Content Area */}
       <div className="content">
-        {selectedOption === 'dashboard' && <DashboardContent />}
-        {selectedOption === 'profile' && <ProfileContent />}
-        {selectedOption === 'settings' && <SettingsContent />}
-        {selectedOption === 'users' && <UsersContent />}
+        {selectedOption === 'Overview' && <Overview />}
+        {selectedOption === 'Systems' && <Systems />}
+        {selectedOption === 'Bills' && <Bills />}
+        {selectedOption === 'Prices' && <Prices />}
+        {selectedOption === 'History' && <History/>}
+        {selectedOption === 'Settings' && <Settings/>}
+
       </div>
     </div>
   );
 };
 
-const DashboardContent = () => {
-  return <div>This is the Dashboard content.</div>;
+const Overview= () => {
+  return <div><Overview/></div>;
 };
 
-const ProfileContent = () => {
+const Systems = () => {
   return <div>This is the Profile content.</div>;
 };
 
-const SettingsContent = () => {
+const Bills= () => {
   return <div>This is the Settings content.</div>;
 };
-const UsersContent = () => {
+const Prices = () => {
     return <div> this is the user content </div>
+};
+const History = ()=>{
+  return <div> This is the history </div>
+};
+const Settings =()=>{
+    return <div>this is Settings</div>
 }
+
 
 export default Dashboard;
