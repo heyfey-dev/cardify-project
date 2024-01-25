@@ -1,6 +1,8 @@
 import  { useState } from 'react';
 import './App.css'; // Assuming you have a stylesheet for styling
 import cardifylogo from './images/Cardify Logo.png'
+import {Link} from 'react-router-dom'
+
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
@@ -113,6 +115,9 @@ const Overview = () => <div>
 
 
 
+
+
+
         <div style={{ display: "flex", gap: "50px" }}>
                     <div style={{ flex: 1, backgroundColor: "rgb(245, 247, 250)", padding: "20px", borderRadius: "10px",  width:"100%" }}>
                                    <div><p>NGN</p></div>
@@ -143,6 +148,16 @@ const Overview = () => <div>
                               </div>
                   </div>
         </div>
+
+
+                <div style={{marginTop:"10px", display:"flex", justifyContent:"space-between"}}>
+                    <div> <h2>History</h2></div>
+                    <div className='mt-4'><Link>All records</Link></div>
+                </div>
+
+                <hr className='mt-5' />
+
+
 
                           
   </div>;
