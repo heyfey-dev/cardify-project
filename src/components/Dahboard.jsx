@@ -2,7 +2,13 @@ import  { useState } from 'react';
 import './App.css'; // Assuming you have a stylesheet for styling
 import cardifylogo from './images/Cardify Logo.png'
 import {Link} from 'react-router-dom'
+import { FaHouseChimney } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
+import { IoCubeSharp } from "react-icons/io5";
 
+
+import { CgArrowTopRight } from "react-icons/cg";
+import { CgArrowBottomLeft } from "react-icons/cg";
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
@@ -32,19 +38,19 @@ const Dashboard = () => {
                                                   className={`sidebar-option ${selectedOption === 'Overview' && 'active'}`}
                                                   onClick={() => handleOptionClick('Overview')}
                                                 >
-                                                   Overview
+                                                 <FaHouseChimney />  Overview
                                                 </div>
                                                 <div
                                                   className={`sidebar-option ${selectedOption === 'Systems' && 'active'}`}
                                                   onClick={() => handleOptionClick('Systems')}
                                                 >
-                                                  Systems
+                                                 <IoCubeSharp /> Systems
                                                 </div>
                                                 <div
                                                   className={`sidebar-option ${selectedOption === 'Bills' && 'active'}`}
                                                   onClick={() => handleOptionClick('Bills')}
                                                 >
-                                                  Bills
+                                                 <FaEnvelope /> Bills
                                                 </div>
                                                 <div
                                                   className={`sidebar-option ${selectedOption === 'Prices' && 'active'}`}
@@ -123,8 +129,8 @@ const Overview = () => <div>
                                    <div><p>NGN</p></div>
                                    <div><p># 0</p></div>
                                    <div style={{ display: "flex",  gap: "8rem" }}>
-                                          <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}>Send</button></div>
-                                          <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}>Receive</button></div>
+                                          <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}><CgArrowTopRight />Send</button></div>
+                                          <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}><CgArrowBottomLeft />Receive</button></div>
                                     </div>
                   </div>
 
@@ -133,8 +139,8 @@ const Overview = () => <div>
                               <div><p>USD</p></div>
                               <div><p>$ 0</p></div>
                               <div style={{ display: "flex",  gap: "8rem" }}>
-                                    <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}>Send</button></div>
-                                    <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}>Receive</button></div>
+                                    <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}><CgArrowTopRight />Send</button></div>
+                                    <div><button className="btn btn-primary"style={{backgroundColor:'rgb(18,167,51)'}}><CgArrowBottomLeft />Receive</button></div>
                               </div>
                   </div>
 
@@ -143,8 +149,8 @@ const Overview = () => <div>
                               <div><p>GBP</p></div>
                               <div><p> 0</p></div>
                               <div style={{ display: "flex",  gap: "8rem" }}>
-                                   <div><button className="btn btn-primary" style={{backgroundColor:'rgb(18,167,51)'}}>Send</button></div>
-                                   <div><button className="btn btn-primary" style={{backgroundColor:'rgb(18,167,51)'}}>Receive</button></div>
+                                   <div><button className="btn btn-primary" style={{backgroundColor:'rgb(18,167,51)'}}><CgArrowTopRight />Send</button></div>
+                                   <div><button className="btn btn-primary" style={{backgroundColor:'rgb(18,167,51)'}}><CgArrowBottomLeft />Receive</button></div>
                               </div>
                   </div>
         </div>
