@@ -7,10 +7,10 @@ const Sidebar = () => {
         <div>
             <Link to='/dashboard'><p>Overview</p></Link>
             <Link to={'system'}><p>Systems</p></Link>
-            <div><p>Bills</p></div>
-            <div><p>Prices</p></div>
-            <div><p>History</p></div>
-            <div>Settings </div>
+            <Link to={'bills'}><p>Bills</p></Link>
+            <Link to={'prices'}><p>Prices</p></Link>
+            <Link to={'history'}><p>History</p></Link>
+            <Link to={'settings'}>Settings</Link>
         </div>
       </main>
   )
