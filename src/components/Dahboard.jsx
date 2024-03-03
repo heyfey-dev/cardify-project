@@ -86,7 +86,7 @@ const Dashboard = () => {
         </div>
 
         {/* Right Content Area */}
-        <div className="content">
+        <div className="content" style={{}}>
           {/* Render the selected component based on the state */}
           {selectedOption === 'Overview' && <Overview />}
           {selectedOption === 'Systems' && <Systems />}
@@ -304,6 +304,75 @@ const Settings = () => (
       </div>
       <hr />
 
+
+      <div>
+            <div>
+              <img src="" alt="" />
+            </div>
+
+            <div>
+              <div><h5>Limit and levels</h5></div>
+              <div><p>Unlock more spending and saving options with our customizable limits and levels. Upgrade your level to set deposit and withdrawal restrictions that suit your needs.</p></div>
+            </div>
+      </div>
+      <hr />
+
+      
+    </div>
+
+
+
+
+    <div className='mt-5' style={{marginTop:"20pxq"}}>
+      <span>Promotions</span>
+
+      <div>
+              <div>
+                <img src="" alt="" />
+              </div>
+       
+              <div>
+                <div><h5>Invite a friend </h5></div>
+                <div><p>Refer and get 200 points once the user performs a transaction on the platform </p></div>
+              </div>
+      </div>
+      <hr />
+
+
+
+      <div>
+        <div>
+          <img src="" alt="" />
+        </div>
+       
+        <div>
+          <div><h5>Redeem a code </h5></div>
+          <div><p>if you have been invited or have a coupon code, please enter your code </p></div>
+        </div>
+      </div>
+      <hr />
+
+
+      <div>
+        <div>
+          <img src="" alt="" />
+        </div>
+       
+        <div>
+          <div><h5>Coupon history</h5></div>
+          <div><p>View all coupon codes you have used  </p></div>
+        </div>
+      </div>
+      <hr />
+
+
+
+      
+
+      
+
+
+      
 
       
     </div>
