@@ -1,28 +1,28 @@
 import { useState } from 'react';
 import './App.css';
 import cardifylogo from './images/Cardify Logo.png';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
-// import { CgArrowTopRight, CgArrowBottomLeft } from 'react-icons/cg';
+import { CgArrowTopRight, CgArrowBottomLeft } from 'react-icons/cg';
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
   const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false);
-  const [isSettingsDropdownOpen, setIsSettingsDropdownOpen] = useState(false);
-
+  const [isBillsDropdownOpen, setisBillsDropdownopen] = useState(false);
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsSystemsDropdownOpen(false); // Close Systems dropdown when another option is selected
-    setIsSettingsDropdownOpen(false); // Close Settings dropdown when another option is selected
+    
   };
 
   const handleSystemsOptionClick = () => {
     setIsSystemsDropdownOpen(!isSystemsDropdownOpen);
   };
 
-  const handleSettingsOptionClicked = () => {
-    setIsSettingsDropdownOpen(!isSettingsDropdownOpen);
-  };
+  const handleBillsOptionClick =() => {
+    setisBillsDropdownopen(!isBillsDropdownOpen);
+  }
+  
 
   return (
     <div>
@@ -55,11 +55,15 @@ const Dashboard = () => {
               </div>
             )}
           </div>
-          <div
-            className={`sidebar-option ${selectedOption === 'Bills' ? 'active' : ''}`}
-            onClick={() => handleOptionClick('Bills')}
-          >
-            Bills
+          
+          <div className="sidebar-option" onClick={handleBillsOptionClick}>
+            <IoCubeSharp /> Bills
+            {isBillsDropdownOpen && (
+              <div className="dropdown-content">
+                <div onClick={() => handleOptionClick('Topup')}>Topup</div>
+                <div onClick={() => handleOptionClick('Vouchers')}>Vouchers</div>
+              </div>
+            )}
           </div>
           <div
             className={`sidebar-option ${selectedOption === 'Prices' ? 'active' : ''}`}
@@ -69,13 +73,13 @@ const Dashboard = () => {
           </div>
           <div
             className={`sidebar-option ${selectedOption === 'History' ? 'active' : ''}`}
-            onClick={() => handleOptionClick('History')}
+            
           >
             History
           </div>
           <div
             className={`sidebar-option ${selectedOption === 'Settings' ? 'active' : ''}`}
-            onClick={handleSettingsOptionClicked}
+            onClick={() => handleOptionClick('Settings')}
           >
             Settings
           </div>
@@ -92,6 +96,8 @@ const Dashboard = () => {
           {selectedOption === 'Settings' && <Settings />}
           {selectedOption === 'Wallets' && <Wallets />}
           {selectedOption === 'Cards' && <Cards />}
+          {selectedOption === 'Topup' && <Topup />}
+          {selectedOption === 'Vouchers' && <Vouchers/>}
         </div>
       </div>
     </div>
@@ -100,7 +106,101 @@ const Dashboard = () => {
 
 const Overview = () => (
   <div>
-    {/* Overview content */}
+      <div style={{ backgroundColor: 'rgb(209,231,221)', margin: '5px', padding: '10px', borderRadius: '10px' }}>
+      <div>
+        <h5>Hello daniel efemena</h5>
+      </div>
+      <div>
+        <p>congratuilations you are now level 1 verified. Verify level 2 below|:</p>
+      </div>
+      <div>
+        <p>Turn on 2FA here </p>
+      </div>
+      <div>BVN verification here </div>
+    </div>
+
+    <div style={{ marginTop: '10px' }}>
+      <h2>Wallets</h2>
+    </div>
+
+    <hr className="mt-5" />
+
+    <div style={{ display: 'flex', gap: '50px' }}>
+      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '100%' }}>
+        <div>
+          <p>NGN</p>
+        </div>
+        <div>
+          <p># 0</p>
+        </div>
+        <div style={{ display: 'flex', gap: '8rem' }}>
+          <div>
+            <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
+              <CgArrowTopRight className="mt-1" /> Send
+            </button>
+          </div>
+          <div>
+            <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
+              <CgArrowBottomLeft className="mt-1" /> Receive
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '100%' }}>
+        <div>
+          <p>USD</p>
+        </div>
+        <div>
+          <p>$ 0</p>
+        </div>
+        <div style={{ display: 'flex', gap: '8rem' }}>
+          <div>
+            <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
+              <CgArrowTopRight className="mt-1" /> Send
+            </button>
+          </div>
+          <div>
+            <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
+              <CgArrowBottomLeft className="mt-1" /> Receive
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '100%' }}>
+        <div>
+          <p>GBP</p>
+        </div>
+        <div>
+          <p> 0</p>
+        </div>
+        <div style={{ display: 'flex', gap: '8rem' }}>
+          <div>
+            <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex', gap: '5px' }}>
+              <CgArrowTopRight className="mt-1" /> Send
+            </button>
+          </div>
+          <div>
+            <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
+              <CgArrowBottomLeft className="mt-1" /> Receive
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style={{ marginTop: '15px', display: 'flex', justifyContent: 'space-between' }}>
+      <div className="mt-4">
+        {' '}
+        <h2>History</h2>
+      </div>
+      <div className="mt-4">
+        <Link >All records</Link>
+      </div>
+    </div>
+
+    <hr className="mt-2" />
   </div>
 );
 
@@ -124,30 +224,120 @@ const Prices = () => (
 
 const History = () => (
   <div>
-    {/* History content */}
+    History content
   </div>
 );
 
 const Settings = () => (
   <div>
-    {/* Settings content */}
+      <div style={{ backgroundColor: 'rgb(209,231,221)', margin: '5px', padding: '10px', borderRadius: '10px' }}>
+      <div>
+        <h5>Hello daniel efemena</h5>
+      </div>
+      <div>
+        <p>congratuilations you are now level 1 verified. Verify level 2 below|:</p>
+      </div>
+      <div>
+        <p>Turn on 2FA here </p>
+      </div>
+      <div>BVN verification here </div>
+    </div>
+
+
+    <div><h3>Settings</h3></div>
+    <hr />
+
+
+    <div>
+      <span>Profile</span>
+
+      <div>
+              <div>
+                <img src="" alt="" />
+              </div>
+       
+              <div>
+                <div><h5>General</h5></div>
+                <div><p>View your personal profile information</p></div>
+              </div>
+      </div>
+      <hr />
+
+
+
+      <div>
+        <div>
+          <img src="" alt="" />
+        </div>
+       
+        <div>
+          <div><h5>Communications</h5></div>
+          <div><p>Control notifications once the user performs a transactionon the platform</p></div>
+        </div>
+      </div>
+      <hr />
+
+
+
+      <div>
+            <div>
+              <img src="" alt="" />
+            </div>
+
+            <div>
+              <div><h5>Security</h5></div>
+              <div><p>Cardify offers two factor authentication, easy password and PIN changes and more to keep your personal information safe </p></div>
+            </div>
+      </div>
+      <hr />
+
+
+      <div>
+            <div>
+              <img src="" alt="" />
+            </div>
+
+            <div>
+              <div><h5>Security</h5></div>
+              <div><p>Cardify offers two factor authentication, easy password and PIN changes and more to keep your personal information safe </p></div>
+            </div>
+      </div>
+      <hr />
+
+
+      
+    </div>
   </div>
 );
 
+
 const Wallets = () => (
   <div>
-    {/* Wallets content */}
-    <h2>Wallets Content</h2>
-    {/* Add your wallet content here */}
+    wallets content
   </div>
 );
 
 const Cards = () => (
   <div>
-    {/* Cards content */}
-    <h2>Cards Content</h2>
-    {/* Add your cards content here */}
+    Cards content
   </div>
 );
+
+const Topup = () => (
+  <div>
+    Topup content
+  </div>
+);
+
+const Vouchers = () => (
+  <div>
+    Settings   content
+  </div>
+);
+
+
+
+
+
 
 export default Dashboard;
