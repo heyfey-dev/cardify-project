@@ -154,13 +154,17 @@ main{
 
 .dashboard-container {
   display: flex;
+  width: 100%; 
+  margin: 0 auto;
+  justify-content: center;
+  
 }
 
 .sidebar {
-  width: 200px;
+  width: 3  00px;
   background-color: rgb(255,255,255);
   color:#555;
-  padding: 20px;
+  padding:     20px;
   font-weight: bolder;
 }
 
@@ -185,7 +189,7 @@ main{
 .content {
   flex: 1;
   padding: 20px;
-  background-color: #f4f4f4;
+  
 }
 
 

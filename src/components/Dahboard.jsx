@@ -73,7 +73,7 @@ const Dashboard = () => {
           </div>
           <div
             className={`sidebar-option ${selectedOption === 'History' ? 'active' : ''}`}
-            
+            onClick={() => handleOptionClick('History')}
           >
             History
           </div>
@@ -223,6 +223,7 @@ const Prices = () => (
 );
 
 const History = () => (
+  
   <div>
     History content
   </div>
@@ -248,10 +249,10 @@ const Settings = () => (
     <hr />
 
 
-    <div>
+    <div style={{marginTop:"70px"}}>
       <span>Profile</span>
 
-      <div>
+      <div >
               <div>
                 <img src="" alt="" />
               </div>
@@ -323,7 +324,7 @@ const Settings = () => (
 
 
 
-    <div className='mt-5' style={{marginTop:"20pxq"}}>
+    <div className='' style={{marginTop:"70px"}}>
       <span>Promotions</span>
 
       <div>
@@ -361,6 +362,65 @@ const Settings = () => (
         <div>
           <div><h5>Coupon history</h5></div>
           <div><p>View all coupon codes you have used  </p></div>
+        </div>
+      </div>
+      <hr />
+
+
+
+      
+
+      
+
+
+      
+
+      
+    </div>
+
+
+
+
+
+
+    <div className='mt-5' style={{marginTop:"70px"}}>
+      <span>Bank and cards</span>
+
+      <div>
+              <div>
+                <img src="" alt="" />
+              </div>
+       
+              <div>
+                <div><h5>Bank</h5></div>
+                <div><p>View and update your bank accouwnts</p></div>
+              </div>
+      </div>
+      <hr />
+
+
+
+      <div>
+        <div>
+          <img src="" alt="" />
+        </div>
+       
+        <div>
+          <div><h5>Physical cards  </h5></div>
+          <div><p>Manage your physical cards </p></div>
+        </div>
+      </div>
+      <hr />
+
+
+      <div>
+        <div>
+          <img src="" alt="" />
+        </div>
+       
+        <div>
+          <div><h5>Virtual cards</h5></div>
+          <div><p>Manage your virtual cards   </p></div>
         </div>
       </div>
       <hr />
