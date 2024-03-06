@@ -3,7 +3,8 @@ import './App.css';
 import cardifylogo from './images/Cardify Logo.png';
 import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
-import { CgArrowTopRight, CgArrowBottomLeft } from 'react-icons/cg';
+import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg';
+import { TbNotes } from "react-icons/tb";
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
@@ -225,7 +226,22 @@ const Prices = () => (
 const History = () => (
   
   <div>
-    History content
+    <div>
+      <h3>Activity</h3>
+      <hr />
+
+      <div style={{display:"flex", gap:"20px"}}>
+        <div><p>Sort</p></div>
+        <div><p>Type</p></div>
+      </div>
+
+      <div style={{textAlign:"end"}}><input type="text" placeholder='Search...' style={{borderRadius:"5px", border:"1px light black", width:"30%", height:"35px"}} /></div>
+
+
+      <div>
+        <div><TbNotes /></div>
+      </div>
+    </div>
   </div>
 );
 
