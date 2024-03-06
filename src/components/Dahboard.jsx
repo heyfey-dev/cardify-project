@@ -4,7 +4,8 @@ import cardifylogo from './images/Cardify Logo.png';
 import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
 import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg';
-import { TbNotes } from "react-icons/tb";
+
+import { PiNote } from "react-icons/pi";
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
@@ -231,15 +232,34 @@ const History = () => (
       <hr />
 
       <div style={{display:"flex", gap:"20px"}}>
-        <div><p>Sort</p></div>
-        <div><p>Type</p></div>
+        <div><p>Sort</p>
+            <ul className='dropDown' >
+              <li>All</li>
+              <li>Pending</li>
+              <li>Succesful</li>
+              <li>Processing</li>
+              <li>Incoming</li>
+              <li>Canceled</li>
+              <li>Scam Flagged</li>
+            </ul>
+        
+        </div>
+        <div><p>Type</p>
+            <ul className='dropDown'>
+              <li>Send </li>
+              <li>Receive</li>
+              <li>Swap</li>
+            </ul>
+        </div>
       </div>
 
       <div style={{textAlign:"end"}}><input type="text" placeholder='Search...' style={{borderRadius:"5px", border:"1px light black", width:"30%", height:"35px"}} /></div>
 
 
       <div>
-        <div><TbNotes /></div>
+        <div style={{fontSize:"150px", textAlign:"center"}}><PiNote /></div>
+        <p  style={{textAlign:"center", fontWeight:"bold"}}>No transactions available</p>
+        <p style={{textAlign:"center"}}>When you makee a trade, the details will show here </p>
       </div>
     </div>
   </div>
