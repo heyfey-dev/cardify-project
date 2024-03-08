@@ -6,6 +6,7 @@ import { Container, Form, Button, Carousel } from 'react-bootstrap';
 import * as Yup from 'yup';
 import cardifylogo from "./images/Cardify Logo.png";
 import { FcGoogle } from "react-icons/fc";
+import axios from 'axios';
 import './App.css'
 const Signup = () => {
   const [step, setStep] = useState(1);
@@ -33,11 +34,20 @@ const Signup = () => {
     }),
 
 
-                            onSubmit: (values) => {
-                                    // Handle submission logic
-                                    console.log('Form values submitted:', values);
-                             },
+    onSubmit: async (values) => {
+      try {
+        const response = await axios.post('http://localhost:27017/createuser', values);
+        console.log('Response:', response.data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    },
+  
+
+
+                           
   });
+                
 
   const nextStep = () => {
     setStep((prevStep) => prevStep + 1);

@@ -3,17 +3,20 @@ import './App.css';
 import cardifylogo from './images/Cardify Logo.png';
 import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
-import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg';
-
+import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg'
 import { PiNote } from "react-icons/pi";
 
 const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
-  const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false);
+  const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false)
   const [isBillsDropdownOpen, setisBillsDropdownopen] = useState(false);
+
+ 
+  
+
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    setIsSystemsDropdownOpen(false); // Close Systems dropdown when another option is selected
+    setIsSystemsDropdownOpen(false); 
     
   };
 
@@ -24,6 +27,9 @@ const Dashboard = () => {
   const handleBillsOptionClick =() => {
     setisBillsDropdownopen(!isBillsDropdownOpen);
   }
+
+
+ 
   
 
   return (
@@ -94,7 +100,7 @@ const Dashboard = () => {
           {selectedOption === 'Systems' && <Systems />}
           {selectedOption === 'Bills' && <Bills />}
           {selectedOption === 'Prices' && <Prices />}
-          {selectedOption === 'History' && <History />}
+          {selectedOption === 'History' &&  <History  />}
           {selectedOption === 'Settings' && <Settings />}
           {selectedOption === 'Wallets' && <Wallets />}
           {selectedOption === 'Cards' && <Cards />}
@@ -231,28 +237,36 @@ const History = () => (
       <h3>Activity</h3>
       <hr />
 
-      <div style={{display:"flex", gap:"20px"}}>
-        <div><p>Sort</p>
-            <ul className='dropDown' >
-              <li>All</li>
-              <li>Pending</li>
-              <li>Succesful</li>
-              <li>Processing</li>
-              <li>Incoming</li>
-              <li>Canceled</li>
-              <li>Scam Flagged</li>
-            </ul>
+            <div>
+                  <div>
+                  <p>Sort</p>
+                       
+          <ul className="dropdown-content">
+            <li>All</li>
+            <li>Pending</li>
+            <li>Successful</li>
+            <li>Processing</li>
+            <li>Incoming</li>
+            <li>Canceled</li>
+            <li>Scam Flagged</li>
+          </ul>
         
-        </div>
-        <div><p>Type</p>
-            <ul className='dropDown'>
-              <li>Send </li>
-              <li>Receive</li>
-              <li>Swap</li>
-            </ul>
-        </div>
-      </div>
+                  </div>
 
+
+            </div>
+
+
+
+              
+
+
+
+
+
+
+
+      
       <div style={{textAlign:"end"}}><input type="text" placeholder='Search...' style={{borderRadius:"5px", border:"1px light black", width:"30%", height:"35px"}} /></div>
 
 
