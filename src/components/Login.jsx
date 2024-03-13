@@ -1,7 +1,7 @@
 
 import { useFormik } from 'formik';
-import {Link} from 'react-router-dom'
-
+import {Link, useNavigate} from 'react-router-dom'
+import axios from 'axios';
 import * as Yup from 'yup';
 import './App.css'
 
@@ -25,11 +25,23 @@ const Login = () => {
               }),
             password: Yup.string().required('Password is required').min(6, 'Password must be at least 6 characters long'),
           }),
-        onSubmit: values => {
-          // Handle login logic here, e.g., send data to server
-          console.log('Form values submitted:', values);
-        },
+       
       });
+
+      const Navigate = useNavigate();
+      async function handleLogin(values){
+            const { email, username, password, ...data}= values;  
+            try {
+              const userInfo = { email, username, password, ...data };
+
+                      console.log('userInfo', userInfo)
+                      const response = await axios.post('http://localhost:4000/login', );
+                      console.log('Logged in succesfuly:', response.data);
+                      Navigate.push('/dashboard');
+            } catch (error) {
+              console.log(error)
+            } 
+      } 
 
 
   return (
@@ -45,7 +57,7 @@ const Login = () => {
                                             <div><p style={{ fontWeight:"bold"}}>Log right into the Cardify experience, with your email address or <br />username, and password.</p></div>
 
 
-              <form onSubmit={formik.handleSubmit}>
+              <form >
                             
                             <div className="mb-3">
                                     <label htmlFor="email" className="form-label" style={{ fontWeight:"bold"}}>
@@ -90,8 +102,8 @@ const Login = () => {
                                        
                             </div>
 
-                            <div className="mt-5"><button type="submit" style={{backgroundColor:'rgb(24,152,29)', color:"white", width:"120px", height:"58px", border:"none", borderRadius:"8px"}}>
-                                        Next</button>
+                            <div className="mt-5"><button type="button" onClick={()=>{handleLogin(formik.values)}} style={{backgroundColor:'rgb(24,152,29)', color:"white", width:"120px", height:"58px", border:"none", borderRadius:"8px"}}>
+                                        Login</button>
                             </div>
 
 

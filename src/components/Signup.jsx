@@ -37,25 +37,27 @@ const Signup = () => {
   });
 
 
-async  function submitData(values){
-    const { email, firstName, lastName, username, phone, password, ...data}= values;
-
+  async function submitData(values) {
+    const { email, firstName, lastName, username, phone, password, ...data } = values;
+  
+    // Log the userData object to check for circular references
+    
     try {
-      const userData= { email, firstName, lastName, username, phone, password, ...data};
+      const userData = { email, firstName, lastName, username, phone, password, ...data };
+      console.log('userData:', userData);
       const response = await axios.post('http://localhost:4000/signup', userData);
-      console.log('registration succesful:' , response.data) 
+      console.log('Registration successful:', response.data);
     } catch (error) {
-        if(error.response){
-        console.logr('server error:', error.response.data);
-    } else if (error.request){
-        console.log('no response from server:', error.request);
-    } else {
-      console.log('error setting request:', error.message);
+      if (error.response) {
+        console.error('Server error:', error.response.data);
+      } else if (error.request) {
+        console.error('No response from server:', error.request);
+      } else {
+        console.error('Error setting request:', error.message);
+      }
     }
   }
- 
-}
-  const nextStep = () => {
+    const nextStep = () => {
     setStep((prevStep) => prevStep + 1);
   };
 
@@ -98,6 +100,8 @@ async  function submitData(values){
                                                 type="email"
                                                 placeholder="Enter your email"
                                                 {...formik.getFieldProps('email')}
+                                                value={formik.values.email}
+                                                onChange={formik.handleChange}
                                               />
                                               {formik.touched.email && formik.errors.email ? (
                                                 <div className="error">{formik.errors.email}</div>
@@ -127,6 +131,8 @@ async  function submitData(values){
                                                       type="text"
                                                       placeholder="Enter your first name"
                                                       {...formik.getFieldProps('firstName')}
+                                                      value={formik.values.firstName}
+                                                      onChange={formik.handleChange}
                                                     />
                                                     {formik.touched.firstName && formik.errors.firstName ? (
                                                       <div className="error">{formik.errors.firstName}</div>
@@ -140,6 +146,8 @@ async  function submitData(values){
                                                       type="text"
                                                       placeholder="Enter your last name"
                                                       {...formik.getFieldProps('lastName')}
+                                                      value={formik.values.lastName}
+                                                      onChange={formik.handleChange}
                                                     />
                                                     {formik.touched.lastName && formik.errors.lastName ? (
                                                       <div className="error">{formik.errors.lastName}</div>
@@ -174,6 +182,8 @@ async  function submitData(values){
                                               type="text"
                                               placeholder="Enter your username"
                                               {...formik.getFieldProps('username')}
+                                              value={formik.values.username}
+                                              onChange={formik.handleChange}
                                             />
                                             {formik.touched.username && formik.errors.username ? (
                                               <div className="error">{formik.errors.username}</div>
@@ -187,6 +197,8 @@ async  function submitData(values){
                                               type="text"
                                               placeholder="Enter your phone number"
                                               {...formik.getFieldProps('phone')}
+                                              value={formik.values.phone}
+                                              onChange={formik.handleChange}
                                             />
                                             {formik.touched.phone && formik.errors.phone ? (
                                               <div className="error">{formik.errors.phone}</div>
@@ -200,6 +212,8 @@ async  function submitData(values){
                                               type="password"
                                               placeholder="Enter your password"
                                               {...formik.getFieldProps('password')}
+                                              value={formik.values.password}
+                                              onChange={formik.handleChange}
                                             />
                                             {formik.touched.password && formik.errors.password ? (
                                               <div className="error">{formik.errors.password}</div>
@@ -211,7 +225,7 @@ async  function submitData(values){
                                             <Button variant="secondary" className="mr-2" type="button" style={{ backgroundColor: 'rgb(39,174,96)', border: "none" }}  onClick={prevStep}>
                                               Previous
                                             </Button>
-                                            <Button variant="primary" style={{ backgroundColor: 'rgb(39,174,96)', border: "none" }}  type="submit">
+                                          <Button variant="primary" style={{ backgroundColor: 'rgb(39,174,96)', border: "none" }}  type="button" onClick={()=>{submitData(formik.values)}}>
                                               Submit
                                             </Button>
                                 </div>
@@ -248,7 +262,7 @@ async  function submitData(values){
                                     <Button variant="secondary" className="mr-2" type="button" onClick={prevStep}>
                                         Previous
                                       </Button>
-                                      <Button variant="primary" type="submit" onClick={submitData}>
+                                      <Button variant="primary" type="button" onClick={submitData}>
                                         Submit
                                       </Button>
                              </div>
