@@ -8,47 +8,53 @@ import cardifylogo from "./images/Cardify Logo.png";
 import { FcGoogle } from "react-icons/fc";
 import axios from 'axios';
 import './App.css'
+
+
 const Signup = () => {
   const [step, setStep] = useState(1);
 
   const formik = useFormik({
-                initialValues: {
-                  email: '',
-                  firstName: '',
-                  lastName: '',
-                  username: '',
-                  phone: '',
-                  password: '',
-                  referralCode: '',
-                  howDidYouHear: '',
+    initialValues: {
+      email: '',
+      firstName: '',
+      lastName: '',
+      username: '',
+      phone: '',
+      password: '',
+      referralCode: '',
+      howDidYouHear: '',
     },
     validationSchema: Yup.object({
-                  email: Yup.string().email('Invalid email address').required('Required'),
-                  firstName: Yup.string().required('Required'),
-                  lastName: Yup.string().required('Required'),
-                  username: Yup.string().required('Required'),
-                  phone: Yup.string().required('Required'),
-                  password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
-                  referralCode: Yup.string(),
-                  howDidYouHear: Yup.string(),
+      email: Yup.string().email('Invalid email address').required('Required'),
+      firstName: Yup.string().required('Required'),
+      lastName: Yup.string().required('Required'),
+      username: Yup.string().required('Required'),
+      phone: Yup.string().required('Required'),
+      password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
+      referralCode: Yup.string(),
+      howDidYouHear: Yup.string(),
     }),
-
-
-    onSubmit: async (values) => {
-      try {
-        const response = await axios.post('http://localhost:27017/createuser', values);
-        console.log('Response:', response.data);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    },
-  
-
-
-                           
   });
-                
 
+
+async  function submitData(values){
+    const { email, firstName, lastName, username, phone, password, ...data}= values;
+
+    try {
+      const userData= { email, firstName, lastName, username, phone, password, ...data};
+      const response = await axios.post('http://localhost:4000/signup', userData);
+      console.log('registration succesful:' , response.data) 
+    } catch (error) {
+        if(error.response){
+        console.logr('server error:', error.response.data);
+    } else if (error.request){
+        console.log('no response from server:', error.request);
+    } else {
+      console.log('error setting request:', error.message);
+    }
+  }
+ 
+}
   const nextStep = () => {
     setStep((prevStep) => prevStep + 1);
   };
@@ -158,7 +164,7 @@ const Signup = () => {
 
 
             <Carousel.Item>
-                       <Form onSubmit={formik.handleSubmit}>
+                       <Form>
                                       <p>YOUR IDENTIFIER</p>
                                       <h6 style={{fontSize:"12px"}}>Your username and password must be unique.</h6>
 
@@ -217,7 +223,7 @@ const Signup = () => {
 
 
          <Carousel.Item>
-             <Form onSubmit={formik.handleSubmit}>
+             <Form >
                                         <p>YOUR PASSWORD AND REFERRAL CODE</p>
                                           <h6 style={{fontSize:"12px"}}>Your password must be known to just you..</h6>
                             <Form.Group controlId="referralCode">
@@ -242,7 +248,7 @@ const Signup = () => {
                                     <Button variant="secondary" className="mr-2" type="button" onClick={prevStep}>
                                         Previous
                                       </Button>
-                                      <Button variant="primary" type="submit">
+                                      <Button variant="primary" type="submit" onClick={submitData}>
                                         Submit
                                       </Button>
                              </div>
