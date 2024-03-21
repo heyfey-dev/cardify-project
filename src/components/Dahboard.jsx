@@ -133,15 +133,15 @@ const Overview = () => (
 
     <hr className="mt-5" />
 
-    <div style={{ display: 'flex', gap: '50px' }}>
-      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '100%' }}>
+    <div style={{ display: 'flex', gap: '20px' }}>
+      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '20%' }}>
         <div>
           <p>NGN</p>
         </div>
         <div>
           <p># 0</p>
         </div>
-        <div style={{ display: 'flex', gap: '8rem' }}>
+        <div style={{ display: 'flex', gap: '4rem' }}>
           <div>
             <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
               <CgArrowTopRight className="mt-1" /> Send
@@ -155,14 +155,14 @@ const Overview = () => (
         </div>
       </div>
 
-      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '100%' }}>
+      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '20%' }}>
         <div>
           <p>USD</p>
         </div>
         <div>
           <p>$ 0</p>
         </div>
-        <div style={{ display: 'flex', gap: '8rem' }}>
+        <div style={{ display: 'flex', gap: '3rem' }}>
           <div>
             <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex' }}>
               <CgArrowTopRight className="mt-1" /> Send
@@ -176,14 +176,14 @@ const Overview = () => (
         </div>
       </div>
 
-      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '100%' }}>
+      <div style={{ flex: 1, backgroundColor: 'rgb(245, 247, 250)', padding: '20px', borderRadius: '10px', width: '20%' }}>
         <div>
           <p>GBP</p>
         </div>
         <div>
           <p> 0</p>
         </div>
-        <div style={{ display: 'flex', gap: '8rem' }}>
+        <div style={{ display: 'flex', gap: '3rem' }}>
           <div>
             <button className="btn btn-primary" style={{ backgroundColor: 'rgb(18,167,51)', display: 'flex', gap: '5px' }}>
               <CgArrowTopRight className="mt-1" /> Send

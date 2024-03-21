@@ -1,14 +1,16 @@
 import { useFormik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useState } from 'react';
 import * as Yup from 'yup';
 import './App.css';
 
 import cardifylogo from './images/Cardify Logo.png';
+import spinner from './spinner.gif'; // Import spinner image
 
 const Login = () => {
     const navigate = useNavigate();
-
+    const [isLoading, setIsLoading] = useState(false);
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -20,7 +22,7 @@ const Login = () => {
         }),
         onSubmit: async (values) => {
     const { email,password, ...data } = values;
-
+    setIsLoading(true);
             try {
               const userData = {email, password, ... data};
               console.log(userData, 'userData')
@@ -38,6 +40,8 @@ const Login = () => {
               } else {
                 console.error('Error setting request:', error.message);
               }
+            } finally{
+                setIsLoading(false);
             }
         },
     });
@@ -97,7 +101,11 @@ const Login = () => {
                                 </div>
                                 <div className="mt-5">
                                     <button type="submit" style={{ backgroundColor: 'rgb(24,152,29)', color: 'white', width: '120px', height: '58px', border: 'none', borderRadius: '8px' }}>
-                                        Login
+                                    {isLoading ? (
+                                            <img src={spinner} alt="Spinner" style={{ width: '32px', height: '32px', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                                        ) : (
+                                            'Login'
+                                        )}
                                     </button>
                                 </div>
                                 <div className="my-3 fw-bold">
