@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import './App.css';
 
 import cardifylogo from './images/Cardify Logo.png';
-import spinner from './spinner.gif'; // Import spinner image
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -102,7 +102,7 @@ const Login = () => {
                                 <div className="mt-5">
                                     <button type="submit" style={{ backgroundColor: 'rgb(24,152,29)', color: 'white', width: '120px', height: '58px', border: 'none', borderRadius: '8px' }}>
                                     {isLoading ? (
-                                            <img src={spinner} alt="Spinner" style={{ width: '32px', height: '32px', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                                                <div className='spinner'></div>
                                         ) : (
                                             'Login'
                                         )}
