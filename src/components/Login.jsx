@@ -7,6 +7,17 @@ import './App.css';
 
 import cardifylogo from './images/Cardify Logo.png';
 
+const ModalSpinner = () => {
+    return (
+        <div className="modal-spinner-overlay">
+            <div className="modal-spinner">
+                <div className="spinner"></div>
+                <div className="spinner-text">Loading...</div>
+            </div>
+        </div>
+    );
+};
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -101,11 +112,7 @@ const Login = () => {
                                 </div>
                                 <div className="mt-5">
                                     <button type="submit" style={{ backgroundColor: 'rgb(24,152,29)', color: 'white', width: '120px', height: '58px', border: 'none', borderRadius: '8px' }}>
-                                    {isLoading ? (
-                                                <div className='spinner'></div>
-                                        ) : (
-                                            'Login'
-                                        )}
+                                            Login
                                     </button>
                                 </div>
                                 <div className="my-3 fw-bold">
@@ -119,6 +126,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            {isLoading && <ModalSpinner />} {/* Render modal spinner if isLoading is true */}
         </div>
     );
 };
