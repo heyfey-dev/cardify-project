@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as Yup from 'yup';
 import './App.css';
 
@@ -10,12 +10,12 @@ import cardifylogo from './images/Cardify Logo.png';
 const ModalSpinner = () => {
     return (
         <div className="modal-spinner-overlay">
-            <div className="modal-spinner">
+           
                 <div className="spinner"></div>
-                <div className="spinner-text">Loading...</div>
-            </div>
+                
+            
         </div>
-    );
+    );        
 };
 
 
@@ -56,6 +56,37 @@ const Login = () => {
             }
         },
     });
+
+
+
+    useEffect(() => {
+        // Function to check if the token has expired
+        const isTokenExpired = () => {
+            const tokenExpiration = localStorage.getItem('tokenExpiration');
+            if (!tokenExpiration) {
+                return true; // Token expiration information not found, consider it expired
+            }
+            return Date.now() > parseInt(tokenExpiration);
+        };
+
+        // Function to logout the user if the token has expired
+        const logoutIfTokenExpired = () => {
+            if (isTokenExpired()) {
+                localStorage.removeItem('token');
+                localStorage.removeItem('tokenExpiration');
+                navigate('/login'); // Redirect the user to the login page
+            }
+        };
+
+        // Check token expiration on component mount
+        logoutIfTokenExpired();
+
+        // Set up an interval to check token expiration periodically (e.g., every minute)
+        const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 60000);
+
+        // Clean up the interval on component unmount
+        return () => clearInterval(tokenExpirationCheckInterval);
+    }, [navigate]);
 
     return (
         <div>
