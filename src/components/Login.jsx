@@ -74,7 +74,7 @@ const Login = () => {
             if (isTokenExpired()) {
                 localStorage.removeItem('token');
                 localStorage.removeItem('tokenExpiration');
-                navigate('/login'); // Redirect the user to the login page
+                navigate('/auth/login'); // Redirect the user to the login page
             }
         };
 
@@ -82,7 +82,7 @@ const Login = () => {
         logoutIfTokenExpired();
 
         // Set up an interval to check token expiration periodically (e.g., every minute)
-        const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 60000);
+        const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 30000);
 
         // Clean up the interval on component unmount
         return () => clearInterval(tokenExpirationCheckInterval);

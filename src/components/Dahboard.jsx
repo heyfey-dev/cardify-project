@@ -498,19 +498,187 @@ const Wallets = () => (
 
 const Cards = () => (
   <div>
-    Cards content
+    
   </div>
 );
 
 const Topup = () => (
   <div>
-    Topup content
+        <div>
+            <div>
+                  <div><h2>Buy Vouchers</h2></div>
+                  <div><p>Choose your preferred vouchers (email delivery)</p></div>
+            </div>
+
+            <div>
+              <div><h4>NIGERIA</h4></div>
+            </div>
+        </div>
+
+        <hr />
+
+                    <div style={{display:"flex", gap:"20px"}}>
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>9 Mobile</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>2% cashback </p></div>
+                                <div><p>2%</p></div>
+                              </div>
+                          </div>
+
+
+
+
+
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>AIRTEL</p></div>
+                              <div style={{display:"flex"}}> 
+                                <div><p>2% cashback </p></div>
+                                <div><p>2%</p></div>
+                              </div>
+                          </div>
+
+
+
+
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>GLO</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>2% cashback </p></div>
+                                <div><p>2%</p></div>
+                              </div>
+                          </div>
+
+
+
+
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>MTN</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>2% cashback </p></div>
+                                <div><p>2%</p></div>
+                              </div>
+                          </div>
+                    </div>
+
+
+
+
+              <div>
+                  <div>
+                    <div><p>Get cashback into your NGN wallet  on cardify bills </p></div>
+                   
+                  </div>
+                  <div><p>transactoons</p></div>
+                  <p>see cashback</p>
+              </div>
+
+
+              {/* bills history */}
+              <div>
+                    <div><h1>Bills History </h1></div>
+                    <div><p>All records</p></div>
+              </div>
+              <hr />
+
+                <div><input type="text" placeholder='search...' /></div>
+
+                <div><img src="" alt="" /></div>  
   </div>
 );
 
 const Vouchers = () => (
   <div>
-    Settings   content
+        <div>
+            <div>
+                  <div><h2>Buy Vouchers</h2></div>
+                  <div><p>Choose your preferred vouchers (email delivery)</p></div>
+            </div>
+
+            <div>
+              <div><h4>NIGERIA</h4></div>
+            </div>
+        </div>
+
+        <hr />
+
+                    <div style={{display:"flex", gap:"20px"}}>
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>MTN Airtime</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>0% cashback </p></div>
+                                <div><p>0%</p></div>
+                              </div>
+                          </div>
+
+
+
+
+
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>IBEDC</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>1% cashback </p></div>
+                                <div><p>1%</p></div>
+                              </div>
+                          </div>
+
+
+
+
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>Airtel Airtime</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>0% cashback </p></div>
+                                <div><p>0%</p></div>
+                              </div>
+                          </div>
+
+
+
+
+                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
+                              <img src="" alt="" />
+                              <div><p>IBEDC</p></div>
+                              <div style={{display:"flex"}}>
+                                <div><p>1% cashback </p></div>
+                                <div><p>1%</p></div>
+                              </div>
+                          </div>
+                    </div>
+
+
+
+
+              <div>
+                  <div>
+                    <div><p>Get cashback into your NGN wallet  on cardify bills </p></div>
+                
+                  </div>
+
+                  <p>transactoons</p>
+                  <p>see cashback</p>
+              </div>
+
+
+              {/* bills history */}
+              <div>
+                    <div><h1>Bills History </h1></div>
+                    <div><p>All records</p></div>
+              </div>
+              <hr />
+
+                <div><input type="text" placeholder='search...' /></div>
+
+                <div><img src="" alt="" /></div>
+
   </div>
 );
 
