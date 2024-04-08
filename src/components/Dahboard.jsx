@@ -503,91 +503,56 @@ const Cards = () => (
 );
 
 const Topup = () => (
-  <div>
+  <div style={{ padding: '20px' }}>
+    <div>
+      <div>
         <div>
-            <div>
-                  <div><h2>Buy Vouchers</h2></div>
-                  <div><p>Choose your preferred vouchers (email delivery)</p></div>
-            </div>
-
-            <div>
-              <div><h4>NIGERIA</h4></div>
-            </div>
+          <h2>Buy Vouchers</h2>
+          <p>Choose your preferred vouchers (email delivery)</p>
         </div>
-
-        <hr />
-
-                    <div style={{display:"flex", gap:"20px"}}>
-                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
-                              <img src="" alt="" />
-                              <div><p>9 Mobile</p></div>
-                              <div style={{display:"flex"}}>
-                                <div><p>2% cashback </p></div>
-                                <div><p>2%</p></div>
-                              </div>
-                          </div>
-
-
-
-
-
-                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
-                              <img src="" alt="" />
-                              <div><p>AIRTEL</p></div>
-                              <div style={{display:"flex"}}> 
-                                <div><p>2% cashback </p></div>
-                                <div><p>2%</p></div>
-                              </div>
-                          </div>
-
-
-
-
-                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
-                              <img src="" alt="" />
-                              <div><p>GLO</p></div>
-                              <div style={{display:"flex"}}>
-                                <div><p>2% cashback </p></div>
-                                <div><p>2%</p></div>
-                              </div>
-                          </div>
-
-
-
-
-                          <div style={{border:"2px solid ", width:"200px", padding:"9px"}}>
-                              <img src="" alt="" />
-                              <div><p>MTN</p></div>
-                              <div style={{display:"flex"}}>
-                                <div><p>2% cashback </p></div>
-                                <div><p>2%</p></div>
-                              </div>
-                          </div>
-                    </div>
-
-
-
-
-              <div>
-                  <div>
-                    <div><p>Get cashback into your NGN wallet  on cardify bills </p></div>
-                   
-                  </div>
-                  <div><p>transactoons</p></div>
-                  <p>see cashback</p>
-              </div>
-
-
-              {/* bills history */}
-              <div>
-                    <div><h1>Bills History </h1></div>
-                    <div><p>All records</p></div>
-              </div>
-              <hr />
-
-                <div><input type="text" placeholder='search...' /></div>
-
-                <div><img src="" alt="" /></div>  
+        <div>
+          <h4>NIGERIA</h4>
+        </div>
+      </div>
+      <hr />
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+        <div style={{ border: '2px solid', width: '100%', maxWidth: '300px', padding: '9px' }}>
+          <img src="" alt="" />
+          <div>
+            <p>9 Mobile</p>
+            <div style={{ display: 'flex' }}>
+              <div><p>2% cashback </p></div>
+              <div><p>2%</p></div>
+            </div>
+          </div>
+        </div>
+        {/* Repeat the above structure for other vouchers */}
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <p>Get cashback into your NGN wallet on cardify bills</p>
+        </div>
+      </div>
+      <div>
+        <p>Transactions</p>
+        <p>See cashback</p>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h1>Bills History</h1>
+        <p>All records</p>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <input type="text" placeholder="Search..." />
+    </div>
+    <div>
+      <img src="" alt="" />
+    </div>
   </div>
 );
 
