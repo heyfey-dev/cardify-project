@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 import cardifylogo from './images/Cardify Logo.png';
+import  airtel from './images/airtel.png';
+import  glo  from './images/glo.png';
+import  mtn from './images/mtn.png';
+import  mobile from './images/9mobile.jpeg';
+import  gift from './images/giftbox.png'
 import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
 import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg'
@@ -517,7 +522,7 @@ const Topup = () => (
 
                     <div style={{display:"flex", gap:"20px"}}>
                           <div className='border-0' style={{border:"2px solid ", width:"200px", padding:"9px", backgroundColor:"rgb(245,247,250)", borderRadius:"12px"}}>
-                              <img src="" alt="" />
+                              <img src={mobile} alt="" style={{width:"50px", borderRadius:'100px'}} />
                               <div><p>9 Mobile</p></div>
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
@@ -530,7 +535,7 @@ const Topup = () => (
 
 
                           <div className='border-0' style={{border:"2px solid ", width:"200px", padding:"9px", backgroundColor:"rgb(245,247,250)", borderRadius:"12px"}}>
-                              <img src="" alt="" />
+                              <img src={airtel} alt="" style={{width:"50px", borderRadius:'100px'}} />
                               <div><p>AIRTEL</p></div>
                               <div style={{display:"flex"}}> 
                                 <div><p>2% cashback </p></div>
@@ -542,7 +547,7 @@ const Topup = () => (
 
 
                           <div className='border-0' style={{border:"2px solid ", width:"200px", padding:"9px", backgroundColor:"rgb(245,247,250)", borderRadius:"12px"}}>
-                              <img src="" alt="" />
+                             <img src={glo} alt="" style={{width:"50px", borderRadius:'100px'}} />
                               <div><p>GLO</p></div>
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
@@ -554,7 +559,7 @@ const Topup = () => (
 
 
                           <div className='border-0' style={{border:"2px solid ", width:"200px", padding:"9px", backgroundColor:"rgb(245,247,250)", borderRadius:"12px"}}>
-                              <img src="" alt="" />
+                              <img src={mtn} alt="" style={{width:"50px", borderRadius:'100px'}} />
                               <div><p>MTN</p></div>
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
@@ -566,26 +571,34 @@ const Topup = () => (
 
 
 
-              <div>
-                  <div>
-                    <div><p>Get cashback into your NGN wallet  on cardify bills </p></div>
-                   
-                  </div>
-                  <div><p>transactoons</p></div>
-                  <p>see cashback</p>
+              <div className='d-flex' style={{border:'1px solid rgb(94,171,135)', padding:'10px', marginTop:'80px', borderRadius:'10px', gap:'15rem'}}>
+                 <div>
+                  <p>Get cashback into your NGN wallet on Cardify Bills transactions</p>
+                  <p style={{color:'rgb(39,171,68)', fontWeight:'bold'}}>See cashback </p>
+                 </div>
+
+                 <div>
+                    <img src={gift} alt="" />
+                 </div>
               </div>
 
 
               {/* bills history */}
-              <div>
-                    <div><h1>Bills History </h1></div>
+              <div className='d-flex' style={{justifyContent:'space-between', marginTop:'40px'}}>
+                    <div><h5>Bills History </h5></div>
                     <div><p>All records</p></div>
               </div>
               <hr />
 
-                <div><input type="text" placeholder='search...' /></div>
+              <div style={{textAlign:"end"}}><input type="text" placeholder='Search...' style={{borderRadius:"5px", border:"1px light black", width:"30%", height:"35px"}} /></div>
 
-                <div><img src="" alt="" /></div>  
+
+              <div>
+        <div style={{fontSize:"150px", textAlign:"center"}}><PiNote /></div>
+        <p  style={{textAlign:"center", fontWeight:"bold"}}>No transactions available</p>
+        <p style={{textAlign:"center"}}>When you makee a trade, the details will show here </p>
+      </div>
+                
   </div>
 );
 

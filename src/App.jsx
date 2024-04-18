@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Homepage from './components/Homepage'
 import Signup from './components/Signup';
 import Dashboard from './components/Dahboard';
-import Apitext from './components/Apitext';
+
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         
         <Route path="/auth/signup" element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard/>}></Route>
-        ,<Route path='/api' element={<Apitext/>}></Route>
+
       </Routes>
     </div>
   );
