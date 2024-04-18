@@ -140,102 +140,71 @@ const Homepage = () => {
 
 
 
-    <div className='container' style={{backgroundColor:'rgb(0,0,0)',}}>
-                    <div className='text-center'>
-                        <div><h6 style={{color:'rgb(5,121,40)'}}>CARDIFY AFRICA WALLETS</h6></div>
-                        <div><h1 className='text-light'>Save, Spend & Exchange</h1></div>
-                        <div><p className='text-light'>Unlock more ways to spend, save and exchange on Cardify Africa wallets.</p></div>
-                    </div>
+<div className='container-fluid' style={{ backgroundColor: 'rgb(0,0,0)' }}>
+  <div className='text-center py-5'>
+    <h6 style={{ color: 'rgb(5,121,40)' }}>CARDIFY AFRICA WALLETS</h6>
+    <h1 className='text-light'>Save, Spend & Exchange</h1>
+    <p className='text-light'>Unlock more ways to spend, save, and exchange on Cardify Africa wallets.</p>
+  </div>
 
+  <div className='row justify-content-center'>
+    {/* Left bar */}
+    <div className='col-lg-6 col-md-12'>
+      {/* Receive and Save option */}
+      <div className='card bg-dark text-light my-4 p-4 rounded'>
+        <h5 className='text-primary'>RECEIVE & SAVE</h5>
+        <p className='text-light'>Cardify Africa NGN and USD wallets allow you to receive and save across multiple digital wallets.</p>
+      </div>
 
+      {/* Send with Cardify */}
+      <div className='card bg-dark text-light my-4 p-4 rounded'>
+        <h5 className='text-primary'>SEND WITH CARDIFY</h5>
+        <p className='text-light'>Leverage various digital wallets to send funds to other Cardify users and external wallets seamlessly.</p>
+      </div>
 
-            <div style={{display:'flex', padding:'80px', gap:'10rem'} }className='container'>
-                  {/* left bar */}
-                    <div className=''>
-
-
-                          {/* receive and save optio */}
-                          <div className='firscard my-5 ' style={{backgroundColor:'rgb(22,22,22)', padding:'50px', borderRadius:'20px', alignItems:'center'}}>
-                              <div>
-                                {/* icon */}
-                                <h5 className='text-primary'>RECEIVE & SAVE</h5>
-                              </div>
-                              <p className='text-light'>Cardify Africa NGN and USD wallets allow you <br />  receive, save across multiple digital wallets.</p>
-                          </div>
-
-
-
-                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)', borderRadius:'20px', padding:'50px' }}>
-                              <div >
-                                {/* icon */}
-                                <h5 className='text-primary'>SEND WITH CARDIFY</h5>
-                              </div>
-                              <p className='text-light'>Leveraging various digital wallets, send funds <br /> to other cardify users as well as external <br /> wallets seamlessly.</p>
-                          </div>
-
-
-
-
-                          <div className='my-5' style={{backgroundColor:'rgb(22,22,22)',borderRadius:'20px', padding:'50px' }} >
-                              <div>
-                                {/* icon */}
-                                <h5 className='text-primary'>SPEND YOUR WALLETS</h5>
-                              </div>
-                              <p className='text-light'>Be limitless by using your Cardify wallets to <br /> fund your dollar card, pay bills and even <br />exchange.</p>
-                          </div>
-
-                    </div>
-
-
-
-
-                    {/* right bar */}
-                    <div style={{backgroundColor:'rgb(22,22,22)', marginTop:'50px'}}>
-                        <div  className=' p-4' style={{height:'5rem'}}>
-                            <div style={{backgroundColor:'black', borderRadius:'20px', marginTop:'50px'}}>
-                              <img src={cardifyapp} style={{width:'25rem', height:'30rem'}}/>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-
-
-
-
-
-
-       
-
-
-
-
-
+      {/* Spend Your Wallets */}
+      <div className='card bg-dark text-light my-4 p-4 rounded'>
+        <h5 className='text-primary'>SPEND YOUR WALLETS</h5>
+        <p className='text-light'>Be limitless by using your Cardify wallets to fund your dollar card, pay bills, and even exchange.</p>
+      </div>
     </div>
 
+    {/* Right bar */}
+    <div className='col-lg-4 col-md-12'>
+      <div className='p-4 bg-dark rounded mt-4'>
+        <div className='bg-black rounded'>
+          <img src={cardifyapp} alt='Cardify App' className='img-fluid' />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    <div className='container d-flex' style={{gap:'5rem' ,marginTop:'6rem'}} >
+
+
+
+
+
+
+    {/* <div className='container' style={{gap:'5rem' ,marginTop:'6rem', display: 'flex', flexDirection:'column'}} > */}
+    <div className='container d-flex flex-sm-colu ' style={{gap:'5rem' ,marginTop:'6rem', }} >
                         
                           {/* left side */}
-
-
-              <div><img src={cardifywallet} style={{width:'35rem', borderRadius:'30px'}} /></div>
-
+              <div className='col-lg-6 col-md-8 col-sm-12'><img src={cardifywallet} style={{width:'35rem', borderRadius:'30px'}} /></div>
 
                           {/* right side */}
-
-
-              <div className='' style={{marginTop:'70px'}}>
+              <div className='col-lg-6 col-md-8 col-sm-12 ' style={{marginTop:'70px'}}>
                     <h1 className='my-5' style={{fontSize:'50px', fontWeight:'bold'}}>Cardify Wallets</h1>
-                    <div>
+                    <div className=' mb-3'>
                       <p>Leverage our fiat and digital wallet options to save, spend and      <a href="">here</a> <br/>exchange.</p>
-                      <p>Learn more about the wallets</p>
+                      <p >Learn more about the wallets</p>
                     </div>
 
-                    <div>
+                    <div className=' mb-3'>
                       <ul>
                         <li>NGN Wallet</li>
-                        <li>USD wallet</li>
+                        <li>USD wallet</li>56
                         <li>GBP wallet (coming soon)</li>
                       </ul>
                     </div>
