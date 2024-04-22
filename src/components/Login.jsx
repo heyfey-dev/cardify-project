@@ -47,9 +47,9 @@ const Login = () => {
               if (error.response) {
                 console.error('Server error:', error.response.data);
               } else if (error.request) {
-                console.error('No response from server:', error.request);
+                alert('e no dey')
               } else {
-                console.error('Error setting request:', error.message);
+                alert('error sending request')
               }
             } finally{
                 setIsLoading(false);

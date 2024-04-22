@@ -17,9 +17,7 @@ const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
   const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false)
   const [isBillsDropdownOpen, setisBillsDropdownopen] = useState(false);
-
- 
-  
+  // const [showmodal, setshowmodal] = useState();
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -33,7 +31,14 @@ const Dashboard = () => {
 
   const handleBillsOptionClick =() => {
     setisBillsDropdownopen(!isBillsDropdownOpen);
-  }
+  };
+
+ 
+
+ 
+
+  
+
 
 
  
@@ -529,7 +534,10 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
+                              <button >buy</button>
                               </div>
+                              
+                          
                           </div>
 
 
@@ -542,7 +550,9 @@ const Topup = () => (
                               <div style={{display:"flex"}}> 
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
+                                <button >Buy IBEDC</button>
                               </div>
+                              
                           </div>
 
 
@@ -554,6 +564,7 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
+                                <button >Buy AIRTEL</button>
                               </div>
                           </div>
 
@@ -566,8 +577,10 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
+                                <button >Buy AIRTEL</button>
                               </div>
                           </div>
+                         
                     </div>
 
 
@@ -606,7 +619,7 @@ const Topup = () => (
 
 const Vouchers = () => (
   <div>
-        <div className='d-flex' style={{}}>
+        <div className='d-flex' style={{justifyContent:'space-between'}}>
             <div>
                   <div><h2>Buy Vouchers</h2></div>
                   <div><h6 style={{fontSize:'15px'}}>Choose your preferred vouchers (email delivery)</h6></div>
