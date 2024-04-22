@@ -546,7 +546,6 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
-                                <button ></button>
                                
                               </div>
                               
@@ -563,7 +562,7 @@ const Topup = () => (
                               <div style={{display:"flex"}}> 
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
-                                <button >Buy IBEDC</button>
+                               
                               </div>
                               
                           </div>
@@ -577,7 +576,7 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
-                                <button >Buy AIRTEL</button>
+                               
                               </div>
                           </div>
 
@@ -590,7 +589,6 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
-                                <button >Buy AIRTEL</button>
                               </div>
                           </div>
                          
