@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
 import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg'
 import { PiNote } from "react-icons/pi";
-
+import Apitext from './Apitext';
 
 
 
@@ -522,7 +522,69 @@ const Wallets = () => (
 
 const Cards = () => (
   <div>
-    
+        <div className='d-flex ' style={{justifyContent:"space-between"}}>
+            <h4>My Cards</h4>
+            <button>Create New Card</button>
+        </div>
+        <hr />
+
+
+        <div className='d-flex gap-4' style={{backgroundColor:"rgb(250,250,250)", padding:"9px"}}>
+            <div className='d-flex gap-4'>
+                <p style={{fontSize:"12px", backgroundColor:"grey", borderRadius:"50%", height:"28px", width:"32px", padding:'5px'}}>1</p>
+                <div>
+                  <p style={{fontSize:"10px"}}>Create new Card</p>
+                  <p style={{fontSize:"10px"}}>Click on create new card and pick the type of <br />card you want to create.</p>
+                </div>
+            </div>
+
+
+            <div className='d-flex gap-4'>
+                <p style={{fontSize:"16px", backgroundColor:"grey", borderRadius:"50%", height:"28px", width:"32px", padding:'5px'}}>2</p>
+                <div>
+                  <p style={{fontSize:"10px"}}>Accept TnC</p>
+                  <p style={{fontSize:"10px"}}>Read our terms and condition thorougly and accept.</p>
+                </div>
+            </div>
+
+
+            <div className='d-flex gap-4'>
+                <p style={{fontSize:"16px", backgroundColor:"grey", borderRadius:"50%", height:"28px", width:"32px", padding:'5px'}}>3</p>
+                <div>
+                  <p style={{fontSize:"10px"}}>Payment</p>
+                  <p style={{fontSize:"10px"}}>Choose wallet, you prefer to pay with and voila you have your card..</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div className="contain">
+      <div className="left-side">
+            <div>
+              <h4>Basic Dollar Card</h4>
+              <p>No Basic Dollar Card created yet</p>
+            </div>
+
+            <div>
+              <h4>Standard Dollar Card</h4>
+              <p>No Standard Dollar Card created yet.</p>
+            </div>
+
+            <div>
+              <h4>Deluxe Dollar Card</h4>
+              <p>No Deluxe Card created yet.</p>
+            </div>
+
+            <div>
+              <h4>Native Naira Card</h4>
+              <p>No Native Naira Card created yet.</p>
+            </div>
+      </div>
+      <div className="vertical-line"></div> {/* Vertical line */}
+      <div className="right-side">
+                  <Apitext/>   
+      </div>
+    </div>
   </div>
 );
 

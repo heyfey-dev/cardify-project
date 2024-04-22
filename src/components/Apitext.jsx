@@ -1,55 +1,44 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';  // Import PropTypes
-
-const ModalSpinner = ({ onClose }) => {
-  return (
-    <div className="overlay" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.7)', zIndex: 1000 }}>
-      <div className="spin" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: '#fff', padding: '20px', borderRadius: '8px' }}>
-        {/* Your spinner content here */}
-        <div style={{ marginTop: '10px' }}>
-          <input type="radio" id="option1" name="options" value="option1" />
-          <label htmlFor="option1" style={{ marginLeft: '5px' }}>Option 1</label>
-        </div>
-        <button onClick={onClose}>Close modal</button>
-      </div>
-    </div>
-  );
-};
-
-
-ModalSpinner.propTypes = {
-  onClose: PropTypes.func.isRequired,
-};
-
 const Apitext = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleBuyClick = () => {
-    setIsLoading(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsLoading(false);
-  };
-
-  return (
-    <div className='border-0' style={{ border: "2px solid", width: "200px", padding: "9px", backgroundColor: "rgb(245,247,250)", borderRadius: "12px" }}>
-      <div><p>9 Mobile</p></div>
-      <div style={{ display: "flex" }}>
-        <div><p>2% cashback </p></div>
-        <div><p>2%</p></div>
-        <button onClick={handleBuyClick}>Buy</button>
+    return (
+      <div>
+        <div className="card">
+          <div className="card__info">
+            <div className="card__logo">MasterCard</div>
+            <div className="card__chip">
+              <svg className="card__chip-lines" role="img" width="20px" height="20px" viewBox="0 0 100 100" aria-label="Chip">
+                <g opacity="0.8">
+                  <polyline points="0,50 35,50" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="0,20 20,20 35,35" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="50,0 50,35" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="65,35 80,20 100,20" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="100,50 65,50" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="35,35 65,35 65,65 35,65 35,35" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="0,80 20,80 35,65" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="50,100 50,65" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                  <polyline points="65,65 80,80 100,80" fill="none" stroke="#000" strokeWidth="2"></polyline>
+                </g>
+              </svg>
+              <div className="card__chip-texture"></div>
+            </div>
+            <div className="card__type">debit</div>
+            <div className="card__number">
+              <span className="card__digit-group">0123</span>
+              <span className="card__digit-group">4567</span>
+              <span className="card__digit-group">8901</span>
+              <span className="card__digit-group">2345</span>
+            </div>
+            <div className="card__valid-thru" aria-label="Valid thru">Valid thru</div>
+            <div className="card__exp-date"><time dateTime="2038-01">01/38</time></div>
+            <div className="card__name" aria-label="Dee Stroyer">Jk Huger</div>
+            <div className="card__vendor" role="img" aria-labelledby="card-vendor">
+              <span id="card-vendor" className="card__vendor-sr">Mastercard</span>
+            </div>
+            <div className="card__texture"></div>
+          </div>
+        </div>
       </div>
-
-      {/* Input radio with text option */}
-      <div style={{ marginTop: '10px' }}>
-        <input type="radio" id="option1" name="options" value="option1" />
-        <label htmlFor="option1" style={{ marginLeft: '5px' }}>Option 1</label>
-      </div>
-
-      {isLoading && <ModalSpinner onClose={handleCloseModal} />} {/* Render modal spinner if isLoading is true */}
-    </div>
-  );
-};
-
-export default Apitext;
+    );
+  };
+  
+  export default Apitext;
+  
