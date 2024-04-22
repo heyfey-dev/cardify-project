@@ -16,7 +16,7 @@ const ModalSpinner = ({ onClose }) => {
   );
 };
 
-// Define prop types for ModalSpinner
+
 ModalSpinner.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
