@@ -262,7 +262,7 @@ main{
 
 .vertical-line {
   width: 2px;
-  background-color: #000; /* Vertical line color */
+  background-color: rgb(229,229,229); 
   margin: 0 20px; /* Optional: Add some space around the line */
 }
 
@@ -284,17 +284,16 @@ main{
 .card {
   animation-name: rotate_500;
   background-color: var(--primary);
-  background-image: radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 29.5%,hsla(0,0%,100%,0) 30%),
-        radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 39.5%,hsla(0,0%,100%,0) 40%),
-        radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 49.5%,hsla(0,0%,100%,0) 50%);
+  background-color: #000;
   border-radius: 0.5em;
   box-shadow: 0 0 0 hsl(0,0%,80%),
         0 0 0 hsl(0,0%,100%),
         -0.2rem 0 0.75rem 0 hsla(0,0%,0%,0.3);
   color: hsl(0,0%,100%);
-  width: 10.3em;
-  height: 6.8em;
+  width: 23.3em;
+  height: 13.8em;
   transform: translate3d(0,0,0);
+  box-shadow: #000;
 }
 
 .card__info,
