@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
   const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false)
   const [isBillsDropdownOpen, setisBillsDropdownopen] = useState(false);
-  // const [showmodal, setshowmodal] = useState();
+  // const [showModal, setShowModal] = useState(false);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -33,7 +33,13 @@ const Dashboard = () => {
     setisBillsDropdownopen(!isBillsDropdownOpen);
   };
 
- 
+//  const handleOpenModal = () => {
+//     setShowModal(true);
+//   };
+
+  // const handleCloseModal = () => {
+  //   setShowModal(false);
+  // };
 
  
 
@@ -534,7 +540,7 @@ const Topup = () => (
                               <div style={{display:"flex"}}>
                                 <div><p>2% cashback </p></div>
                                 <div><p>2%</p></div>
-                              <button >buy</button>
+                                <button ></button>
                               </div>
                               
                           
