@@ -36,12 +36,12 @@ const Resetpassword = () => {
                     <div className="card border-0">
                         <div className="card-body">
                             <img src={cardifylogo} style={{ width: '7rem' }} alt="Cardify Logo" />
-                            <h2 className="mb-4" style={{ fontFamily: '' }}>
+                            <h2 className="mt-3" style={{ fontFamily: '' }}>
                                 Forgot password
                             </h2>
                             <div>
                                 <p style={{ fontWeight: 'bold' }}>
-                                Forgotten your password? Hang on, we can email you instructions to reset your <br /> password's account.
+                                Forgotten your password? Hang on, we can email you instructions to <br /> reset your  password.
                                 </p>
                             </div>
                             <form onSubmit={formik.handleSubmit}>
@@ -54,7 +54,7 @@ const Resetpassword = () => {
                                         className="form-control"
                                         id="email"
                                         name="email"
-                                        placeholder="Enter your email address"
+                                        placeholder="Enter the email address of the lost password"
                                         style={{ padding: '15px' }}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
@@ -64,9 +64,15 @@ const Resetpassword = () => {
                                         <div className="error">{formik.errors.email}</div>
                                     ) : null}
                                 </div>
+
+                                <div className="mt-2">
+                                <button type="submit" style={{ backgroundColor: 'rgb(24,152,29)', color: 'white', width: '15 0px', height: '50px', border: 'none', borderRadius: '8px' }}>
+                                            Send reset code
+                                    </button>
+                                </div>
                             </form>
                             <div className="my-3 fw-bold">
-                                <Link to="/auth/signup" style={{ color: 'rgb(24,152,29)' }}>Register now</Link>
+                                <Link to="/auth/login" style={{ color: 'rgb(24,152,29)' }}>Register now</Link>
                             </div>
                         </div>
                     </div>
