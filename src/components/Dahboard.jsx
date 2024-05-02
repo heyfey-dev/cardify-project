@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import './App.css';
 import cardifylogo from './images/Cardify Logo.png';
 import  airtel from './images/airtel.png';
@@ -13,7 +13,8 @@ import { IoCubeSharp } from 'react-icons/io5';
 import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg'
 import { PiNote } from "react-icons/pi";
 import Apitext from './Apitext';
-
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 
@@ -23,7 +24,7 @@ const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('Overview');
   const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false)
   const [isBillsDropdownOpen, setisBillsDropdownopen] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
+  const [firstName, setFirstName] = useState('');
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -39,13 +40,17 @@ const Dashboard = () => {
     setisBillsDropdownopen(!isBillsDropdownOpen);
   };
 
-//  const handleOpenModal = () => {
-//     setShowModal(true);
-//   };
-
-  // const handleCloseModal = () => {
-  //   setShowModal(false);
-  // };
+  useEffect(() => {
+    axios.get('http://localhost:4000/firstName', {
+            // Replace with the actual password from your state or props
+    })
+    .then(response => {
+      setFirstName(response.data.firstName);
+    })
+    .catch(error => {
+      console.error('Error fetching first name:', error.response ? error.response.data : error.message);
+    });
+  }, []);
 
  
 
@@ -64,7 +69,7 @@ const Dashboard = () => {
             <img src={cardifylogo} style={{ width: '20px' }} alt="Cardify Logo" />
           </div>
           <div>
-            <h1>Daniel efemena</h1>
+            <h1>{firstName}</h1>
           </div>
         </div>
       </nav>
@@ -82,7 +87,7 @@ const Dashboard = () => {
             <IoCubeSharp /> Systems
             {isSystemsDropdownOpen && (
               <div className="dropdown-content">
-                <div onClick={() => handleOptionClick('Wallets')}>Wallets</div>
+                
                 <div onClick={() => handleOptionClick('Cards')}>Cards</div>
               </div>
             )}
@@ -126,7 +131,7 @@ const Dashboard = () => {
           {selectedOption === 'Prices' && <Prices />}
           {selectedOption === 'History' &&  <History  />}
           {selectedOption === 'Settings' && <Settings />}
-          {selectedOption === 'Wallets' && <Wallets />}
+            
           {selectedOption === 'Cards' && <Cards />}
           {selectedOption === 'Topup' && <Topup />}
           {selectedOption === 'Vouchers' && <Vouchers/>}
@@ -140,7 +145,7 @@ const Overview = () => (
   <div>
       <div style={{ backgroundColor: 'rgb(209,231,221)', margin: '5px', padding: '10px', borderRadius: '10px' }}>
       <div>
-        <h5>Hello daniel efemena</h5>
+        
       </div>
       <div>
         <p>congratuilations you are now level 1 verified. Verify level 2 below|:</p>
@@ -514,17 +519,12 @@ const Settings = () => (
 );
 
 
-const Wallets = () => (
-  <div>
-    wallets content
-  </div>
-);
 
 const Cards = () => (
   <div>
         <div className='d-flex ' style={{justifyContent:"space-between"}}>
-            <h4>My Cards</h4>
-            <button>Create New Card</button>
+            <h4 style={{fontFamily:"sans-serif", fontWeight:"bold", fontSize:"2rem"}}>My Cards</h4>
+            <button style={{backgroundColor:"rgb(18,167,51)", color:"white", border:"none", width:"10rem", borderRadius:"10px"}}>Create New Card</button>
         </div>
         <hr />
 
@@ -558,31 +558,36 @@ const Cards = () => (
         </div>
 
 
-        <div className="contain">
+        <div className="contain" style={{boxShadow: '0px 8px 10px rgba(0, 0, 0, 0.1)', borderRadius:"20px", border:"none", marginTop:"20px"}}>
       <div className="left-side">
             <div>
-              <h4>Basic Dollar Card</h4>
+              <h4 style={{fontFamily:"sans-serif", fontWeight:"bold"}}>Basic Dollar Card</h4>
               <p>No Basic Dollar Card created yet</p>
             </div>
 
             <div>
-              <h4>Standard Dollar Card</h4>
+              <h4 style={{fontFamily:"sans-serif", fontWeight:"bold"}}>Standard Dollar Card</h4>
               <p>No Standard Dollar Card created yet.</p>
             </div>
 
             <div>
-              <h4>Deluxe Dollar Card</h4>
+              <h4 style={{fontFamily:"sans-serif", fontWeight:"bold"}}>Deluxe Dollar Card</h4>
               <p>No Deluxe Card created yet.</p>
             </div>
 
             <div>
-              <h4>Native Naira Card</h4>
+              <h4 style={{fontFamily:"sans-serif", fontWeight:"bold"}}>Native Naira Card</h4>
               <p>No Native Naira Card created yet.</p>
             </div>
       </div>
       <div className="vertical-line"></div> {/* Vertical line */}
       <div className="right-side">
-                  <Apitext/>   
+            <div><Apitext/></div>
+            <div>
+                  <div style={{fontSize:"80px", textAlign:"center"}}><PiNote /></div>
+                  <p  style={{textAlign:"center", fontWeight:"bold"}}>No Cards created yet</p>
+                  <p style={{textAlign:"center"}}>When you generate a cards, the details will show here </p>
+               </div>
       </div>
     </div>
   </div>

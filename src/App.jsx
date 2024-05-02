@@ -5,6 +5,7 @@ import Homepage from './components/Homepage'
 import Signup from './components/Signup';
 import Dashboard from './components/Dahboard';
 import Apitext from './components/Apitext';
+import Resetpassword from './components/Resetpassword';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/auth/signup" element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard/>}></Route>
         <Route path='/API' element={<Apitext/>}></Route>
+        <Route path='/reset' element={<Resetpassword/>}></Route>
       </Routes>
     </div>
   );
