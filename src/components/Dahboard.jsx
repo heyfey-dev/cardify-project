@@ -53,7 +53,14 @@ const Dashboard = () => {
     });
   }, []);
 
- 
+  // const handleLogout = () => {
+  //   // Perform any logout actions here, such as clearing localStorage
+  //   localStorage.removeItem('token');
+  //   localStorage.removeItem('tokenExpiration');
+
+  //   // Redirect the user to the login page
+  //   history.push('/auth/login');
+  // };
 
   
 
@@ -69,14 +76,16 @@ const Dashboard = () => {
           <div>
             <img src={cardifylogo} style={{ width: '100px' }} alt="Cardify Logo" />
           </div>
-          <div>
-            <h5 className="dropdown-toggle" id="dropdownMenuText" data-bs-toggle="dropdown" aria-expanded="false">Welcome {firstName}</h5>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuText">
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+          <div className="dropdown">
+              <h5 className="dropdown-toggle" id="dropdownMenuText" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome {firstName}
+              </h5>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuText">
+                {/* <li> <button o/nClick={handleLogout}>Logout</button></li> */}
+               
+              </ul>
+            </div>
+
         </div>
       </nav>
 

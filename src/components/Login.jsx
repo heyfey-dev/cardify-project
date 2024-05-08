@@ -10,10 +10,7 @@ import cardifylogo from './images/Cardify Logo.png';
 const ModalSpinner = () => {
     return (
         <div className="modal-spinner-overlay">
-           
-                <div className="spinner"></div>
-                
-            
+            <div className="spinner"></div>
         </div>
     );        
 };
@@ -32,65 +29,51 @@ const Login = () => {
             password: Yup.string().required('Password is required').min(6, 'Password must be at least 6 characters long'),
         }),
         onSubmit: async (values) => {
-    const { email,password, ...data } = values;
-    setIsLoading(true);
+            const { email,password, ...data } = values;
+            setIsLoading(true);
             try {
-              const userData = {email, password, ... data};
-              console.log(userData, 'userData')
-
+                const userData = {email, password, ... data};
+                console.log(userData, 'userData')
                 const response = await axios.post('http://localhost:4000/login', userData);
                 const { token, expirationTime } = response.data;
                 localStorage.setItem('token', token);
                 localStorage.setItem('email', email);
                 localStorage.setItem('tokenExpiration', expirationTime);  
                 navigate('/dashboard');
-                
-            } catch (error) {
-              if (error.response) {
-                console.error('Server error:', error.response.data);
-              } else if (error.request) {
-                alert('e no dey')
-              } else {
-                alert('error sending request')
-              }
-            } finally{
+            } catch (error){
+                console.error('Login error:', error);
+                localStorage.removeItem('token');
+                localStorage.removeItem('tokenExpiration');
                 setIsLoading(false);
             }
-        },
+        }
     });
-
-
 
     useEffect(() => {
        // Function to check if the token has expired
-const isTokenExpired = () => {
-    const tokenExpiration = localStorage.getItem('tokenExpiration');
-    console.log('Token Expiration Time:', new Date(parseInt(tokenExpiration))); // Log token expiration time
-    console.log('Current Time:', new Date()); // Log current time
-    if (!tokenExpiration) {
-        return true; // Token expiration information not found, consider it expired
-    }
-    return Date.now() > parseInt(tokenExpiration);
-};
+       const isTokenExpired = () => {
+            const tokenExpiration = localStorage.getItem('tokenExpiration');
+            if (!tokenExpiration) {
+                return true;
+            }
+            return Date.now() > parseInt(tokenExpiration);
+        };
 
-// Function to logout the user if the token has expired
-const logoutIfTokenExpired = () => {
-    if (isTokenExpired()) {
-            console.log('Token has expired. Logging out...'); // Log if token has expired
-            localStorage.removeItem('token');
-            localStorage.removeItem('tokenExpiration');
-        navigate('/auth/login'); // Redirect the user to the login page
-    }
-};
+        // Function to logout the user if the token has expired
+        const logoutIfTokenExpired = () => {
+            if (isTokenExpired()) {
+                console.log('Token has expired. Logging out...');
+                localStorage.removeItem('token');
+                localStorage.removeItem('tokenExpiration');
+                navigate('/auth/login');
+            }
+        };
 
-// Check token expiration on component mount
-logoutIfTokenExpired();
+        // Check token expiration on component mount
+        logoutIfTokenExpired();
 
-// Set up an interval to check token expiration periodically (e.g., every minute)
-const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 30000);
-
-// Clean up the interval on component unmount
-return () => clearInterval(tokenExpirationCheckInterval);
+        const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 30000);
+        return () => clearInterval(tokenExpirationCheckInterval);
 
     }, [navigate]);
 
