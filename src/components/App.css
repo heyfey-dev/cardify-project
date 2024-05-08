@@ -1,45 +1,45 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+    /* #root {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+    .logo {
+      height: 6em;
+      padding: 1.5em;
+      will-change: filter;
+      transition: filter 300ms;
+    }
+    .logo:hover {
+      filter: drop-shadow(0 0 2em #646cffaa);
+    }
+    .logo.react:hover {
+      filter: drop-shadow(0 0 2em #61dafbaa);
+    }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    @keyframes logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+    @media (prefers-reduced-motion: no-preference) {
+      a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+      }
+    }
 
-.card {
-  padding: 2em;
-}
+    .card {
+      padding: 2em;
+    }
 
-.read-the-docs {
-  color: #888;
-} */
+    .read-the-docs {
+      color: #888;
+    } */
 
 
 
@@ -268,7 +268,8 @@ main{
   margin: 0 20px; /* Optional: Add some space around the line */
 }
 
-/* 
+
+
 .card,
 .card__chip {
   overflow: hidden;
@@ -282,20 +283,22 @@ main{
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
+.card__chip{
+  background-color: #18cc3f;
+}
 
 .card {
   animation-name: rotate_500;
-  background-color: var(--primary);
-  background-color: #000;
+  background-color: green;
+  
   border-radius: 0.5em;
   box-shadow: 0 0 0 hsl(0,0%,80%),
         0 0 0 hsl(0,0%,100%),
         -0.2rem 0 0.75rem 0 hsla(0,0%,0%,0.3);
   color: hsl(0,0%,100%);
-  width: 26.3em;
-  height: 13.8em;
+  width: 19em;
+  height: 12em;
   transform: translate3d(0,0,0);
-  box-shadow: #000;
 }
 
 .card__info,
@@ -449,7 +452,7 @@ main{
 .card__texture {
   animation-name: texture;
   background-image: linear-gradient(-80deg,hsla(0,0%,100%,0.3) 25%,hsla(0,0%,100%,0) 45%);
-} */
+}
  
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
@@ -498,8 +501,6 @@ main{
     transform: translate3d(-50%,0,0);
   }
 }                
-
-
 
 
 

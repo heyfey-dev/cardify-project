@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
 import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg'
 import { PiNote } from "react-icons/pi";
-import Apitext from './Apitext';
+// import Apitext from './Apitext';
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -41,7 +41,8 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:4000/firstName', {
+    let userEmail = localStorage.getItem('email')
+    axios.get(`http://localhost:4000/firstName?email=${userEmail}`, {
             // Replace with the actual password from your state or props
     })
     .then(response => {
@@ -66,10 +67,15 @@ const Dashboard = () => {
       <nav>
         <div className="container d-flex justify-content-between">
           <div>
-            <img src={cardifylogo} style={{ width: '20px' }} alt="Cardify Logo" />
+            <img src={cardifylogo} style={{ width: '100px' }} alt="Cardify Logo" />
           </div>
           <div>
-            <h1>{firstName}</h1>
+            <h5 className="dropdown-toggle" id="dropdownMenuText" data-bs-toggle="dropdown" aria-expanded="false">Welcome {firstName}</h5>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuText">
+                <li><a className="dropdown-item" href="#">Action</a></li>
+                <li><a className="dropdown-item" href="#">Another action</a></li>
+                <li><a className="dropdown-item" href="#">Something else here</a></li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -144,9 +150,7 @@ const Dashboard = () => {
 const Overview = () => (
   <div>
       <div style={{ backgroundColor: 'rgb(209,231,221)', margin: '5px', padding: '10px', borderRadius: '10px' }}>
-      <div>
-        
-      </div>
+    
       <div>
         <p>congratuilations you are now level 1 verified. Verify level 2 below|:</p>
       </div>
@@ -582,7 +586,37 @@ const Cards = () => (
       </div>
       <div className="vertical-line"></div> {/* Vertical line */}
       <div className="right-side">
-            <div><Apitext/></div>
+      <div className="card">
+
+        <div><img style={{width:"100px", padding:"10px"}} src={cardifylogo} alt="" /></div>
+<div className="card__info">
+    {/* <div className="card__logo">MasterCard</div> */}
+    <div className="card__chip mt-4 " style={{width:"1.9rem", height:"26px"}} >
+        
+        <div className="card__chip-texture"></div>
+    </div>
+      <div className="card__type">debit</div>
+      <div className="card__number">
+        <span className="card__digit-group">0123</span>
+        <span className="card__digit-group">4567</span>
+        <span className="card__digit-group">8901</span>
+        <span className="card__digit-group">2345</span>
+    </div>
+      <div className="card__valid-thru" aria-label="Valid thru">Valid thru</div>
+      <div className="card__exp-date">01/28</div>
+      <div className="card__name" aria-label="Dee Stroyer">Jk Huger</div>
+      <div className="card__vendor" role="img" aria-labelledby="card-vendor">
+      <span id="card-vendor" className="card__vendor-sr">Mastercard</span>
+    </div>
+<div className="card__texture"></div>
+        </div>
+            </div>
+
+
+
+
+
+            
             <div>
                   <div style={{fontSize:"80px", textAlign:"center"}}><PiNote /></div>
                   <p  style={{textAlign:"center", fontWeight:"bold"}}>No Cards created yet</p>

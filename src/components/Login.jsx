@@ -39,8 +39,10 @@ const Login = () => {
               console.log(userData, 'userData')
 
                 const response = await axios.post('http://localhost:4000/login', userData);
-                const { token } = response.data;
+                const { token, expirationTime } = response.data;
                 localStorage.setItem('token', token);
+                localStorage.setItem('email', email);
+                localStorage.setItem('tokenExpiration', expirationTime);  
                 navigate('/dashboard');
                 
             } catch (error) {
@@ -60,40 +62,44 @@ const Login = () => {
 
 
     useEffect(() => {
-        // Function to check if the token has expired
-        const isTokenExpired = () => {
-            const tokenExpiration = localStorage.getItem('tokenExpiration');
-            if (!tokenExpiration) {
-                return true; // Token expiration information not found, consider it expired
-            }
-            return Date.now() > parseInt(tokenExpiration);
-        };
+       // Function to check if the token has expired
+const isTokenExpired = () => {
+    const tokenExpiration = localStorage.getItem('tokenExpiration');
+    console.log('Token Expiration Time:', new Date(parseInt(tokenExpiration))); // Log token expiration time
+    console.log('Current Time:', new Date()); // Log current time
+    if (!tokenExpiration) {
+        return true; // Token expiration information not found, consider it expired
+    }
+    return Date.now() > parseInt(tokenExpiration);
+};
 
-        // Function to logout the user if the token has expired
-        const logoutIfTokenExpired = () => {
-            if (isTokenExpired()) {
-                localStorage.removeItem('token');
-                localStorage.removeItem('tokenExpiration');
-                navigate('/auth/login'); // Redirect the user to the login page
-            }
-        };
+// Function to logout the user if the token has expired
+const logoutIfTokenExpired = () => {
+    if (isTokenExpired()) {
+            console.log('Token has expired. Logging out...'); // Log if token has expired
+            localStorage.removeItem('token');
+            localStorage.removeItem('tokenExpiration');
+        navigate('/auth/login'); // Redirect the user to the login page
+    }
+};
 
-        // Check token expiration on component mount
-        logoutIfTokenExpired();
+// Check token expiration on component mount
+logoutIfTokenExpired();
 
-        // Set up an interval to check token expiration periodically (e.g., every minute)
-        const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 30000);
+// Set up an interval to check token expiration periodically (e.g., every minute)
+const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 30000);
 
-        // Clean up the interval on component unmount
-        return () => clearInterval(tokenExpirationCheckInterval);
+// Clean up the interval on component unmount
+return () => clearInterval(tokenExpirationCheckInterval);
+
     }, [navigate]);
 
     return (
         <div>
             <div className="row justify-content-center mt-5">
                 <div className="col-md-5">
-                    <div className="card border-0">
-                        <div className="card-body">
+                    <div className="cardi border-0">
+                        <div className="car">
                             <img src={cardifylogo} style={{ width: '7rem' }} alt="Cardify Logo" />
                             <h2 className="mb-4" style={{ fontFamily: '' }}>
                                 Login
@@ -133,6 +139,7 @@ const Login = () => {
                                         id="password"
                                         style={{ padding: '15px' }}
                                         name="password"
+                                        placeholder="Enter your password"
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
                                         value={formik.values.password}
@@ -149,9 +156,11 @@ const Login = () => {
                                 <div className="my-3 fw-bold">
                                     New to Cardify? <Link to="/auth/signup" style={{ color: 'rgb(24,152,29)' }}>Register now</Link>
                                 </div>
-                                <div className="fw-bold">
-                                    Forgot password? <a href="" style={{ color: 'rgb(24,152,29)' }}>Click here</a>
+
+                                <div className="my-3 fw-bold">
+                                    Forgot password? <Link to="/auth/reset" style={{ color: 'rgb(24,152,29)' }}>Click here</Link>
                                 </div>
+                                
                             </form>
                         </div>
                     </div>

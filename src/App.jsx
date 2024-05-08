@@ -8,6 +8,7 @@ import Apitext from './components/Apitext';
 import Resetpassword from './components/Resetpassword';
 
 
+
 const App = () => {
   return (
     <div>
@@ -19,7 +20,8 @@ const App = () => {
         <Route path="/auth/signup" element={<Signup />} />
         <Route path='/dashboard' element={<Dashboard/>}></Route>
         <Route path='/API' element={<Apitext/>}></Route>
-        <Route path='/reset' element={<Resetpassword/>}></Route>
+        <Route path='/auth/reset' element={<Resetpassword/>}></Route>
+       
       </Routes>
     </div>
   );

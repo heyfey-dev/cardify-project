@@ -24,7 +24,7 @@ const Resetpassword = () => {
             email: Yup.string().required('Email is required'),
         }),
         onSubmit: () => {
-            // const { email, ...data } = values;
+            
     setIsLoading(true);
         }
     });
