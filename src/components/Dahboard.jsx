@@ -8,7 +8,7 @@ import  mobile from './images/9mobile.jpeg';
 import  gift from './images/giftbox.png';
 import  ibedc from './images/ibedc.png';
 import  ikedc from './images/ikedc.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { IoCubeSharp } from 'react-icons/io5';
 import { CgArrowTopRight, CgArrowBottomLeft  } from 'react-icons/cg'
 import { PiNote } from "react-icons/pi";
@@ -21,11 +21,13 @@ import axios from 'axios';
 
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState('Overview');
   const [isSystemsDropdownOpen, setIsSystemsDropdownOpen] = useState(false)
   const [isBillsDropdownOpen, setisBillsDropdownopen] = useState(false);
   const [firstName, setFirstName] = useState('');
-
+  const [oneMinute, setOneMinute] = useState(Date.now() + (5* 60 * 1000))
+  console.log(new Date(1716299849657))
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsSystemsDropdownOpen(false); 
@@ -41,6 +43,25 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
+    const tokenExpiration = localStorage.getItem('tokenExpiration');
+    if (tokenExpiration) {
+        const expirationTime = parseInt(tokenExpiration);
+        const currentTime = new Date().getTime();
+        console.log(expirationTime);
+        console.log(currentTime);
+        if (oneMinute < expirationTime) {
+            console.log(true)
+            // Token is expired, log out the user
+            localStorage.removeItem('token');
+            localStorage.removeItem('email');
+            localStorage.removeItem('tokenExpiration');
+            navigate('/auth/login');
+        }
+    }
+}, [oneMinute]);
+
+
+  useEffect(() => {
     let userEmail = localStorage.getItem('email')
     axios.get(`http://localhost:4000/firstName?email=${userEmail}`, {
             // Replace with the actual password from your state or props
@@ -53,21 +74,8 @@ const Dashboard = () => {
     });
   }, []);
 
-  // const handleLogout = () => {
-  //   // Perform any logout actions here, such as clearing localStorage
-  //   localStorage.removeItem('token');
-  //   localStorage.removeItem('tokenExpiration');
-
-  //   // Redirect the user to the login page
-  //   history.push('/auth/login');
-  // };
-
   
 
-
-
- 
-  
 
   return (
     <div>

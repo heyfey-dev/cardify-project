@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import * as Yup from 'yup';
 import './App.css';
 
@@ -19,6 +19,8 @@ const ModalSpinner = () => {
 const Login = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+    
+    console.log(new Date(1716299849657))
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -42,40 +44,29 @@ const Login = () => {
                 navigate('/dashboard');
             } catch (error){
                 console.error('Login error:', error);
-                localStorage.removeItem('token');
-                localStorage.removeItem('tokenExpiration');
+                alert('error')
                 setIsLoading(false);
             }
         }
     });
 
-    useEffect(() => {
-       // Function to check if the token has expired
-       const isTokenExpired = () => {
-            const tokenExpiration = localStorage.getItem('tokenExpiration');
-            if (!tokenExpiration) {
-                return true;
-            }
-            return Date.now() > parseInt(tokenExpiration);
-        };
-
-        // Function to logout the user if the token has expired
-        const logoutIfTokenExpired = () => {
-            if (isTokenExpired()) {
-                console.log('Token has expired. Logging out...');
-                localStorage.removeItem('token');
-                localStorage.removeItem('tokenExpiration');
-                navigate('/auth/login');
-            }
-        };
-
-        // Check token expiration on component mount
-        logoutIfTokenExpired();
-
-        const tokenExpirationCheckInterval = setInterval(logoutIfTokenExpired, 30000);
-        return () => clearInterval(tokenExpirationCheckInterval);
-
-    }, [navigate]);
+    // useEffect(() => {
+    //     const tokenExpiration = localStorage.getItem('tokenExpiration');
+    //     if (tokenExpiration) {
+    //         const expirationTime = parseInt(tokenExpiration);
+    //         const currentTime = new Date().getTime();
+    //         console.log(expirationTime);
+    //         console.log(currentTime);
+    //         if (oneMinute > expirationTime) {
+    //             console.log(true)
+    //             // Token is expired, log out the user
+    //             localStorage.removeItem('token');
+    //             localStorage.removeItem('email');
+    //             localStorage.removeItem('tokenExpiration');
+    //             navigate('/auth/login');
+    //         }
+    //     }
+    // }, [oneMinute]);
 
     return (
         <div>
@@ -112,9 +103,10 @@ const Login = () => {
                                         <div className="error">{formik.errors.email}</div>
                                     ) : null}
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-3"
+                                >
                                     <label htmlFor="password" className="form-label" style={{ fontWeight: 'bold' }}>
-                                        Password
+                                        Password9
                                     </label>
                                     <input
                                         type="password"
