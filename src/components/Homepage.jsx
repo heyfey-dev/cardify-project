@@ -8,11 +8,9 @@ import cardifyapp from './images/Cardifyapp.gif'
 import cardifywallet from './images/cardifywallets.jpg'
 import cardifycards from './images/paybills.png'
 import { Link } from 'react-router-dom';
-
-
-
 import './App.css'
 import Homebuycodes from './Homebuycodes';
+import Autotype from './Autotype';
 
 const Homepage = () => {
 
@@ -61,7 +59,7 @@ const Homepage = () => {
     {/* Left Content */}
     <div className='my-5'>
       <div><h1 className='thiscnt fw-bold'>Unlock more ways to </h1></div>
-      <div><h1 className='thatcnt fw-bold'>spend, exchange, save</h1></div>
+      <div><h1 className='thatcnt fw-bold'><Autotype/></h1></div>
       <div className='my-4'>
         <p>Cardify Africa lets you exchange, spend, and save money across several digital
           <br /> wallets with NGN -Exchange, Buy vouchers, Pay utility bills leveraging fiat and other

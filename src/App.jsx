@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Dashboard from './components/Dahboard';
 import Apitext from './components/Apitext';
 import Resetpassword from './components/Resetpassword';
+import Autotype from './components/Autotype';
 
 
 
@@ -21,7 +22,7 @@ const App = () => {
         <Route path='/dashboard' element={<Dashboard/>}></Route>
         <Route path='/API' element={<Apitext/>}></Route>
         <Route path='/auth/reset' element={<Resetpassword/>}></Route>
-       
+        <Route path='/type' element={<Autotype/>}></Route>
       </Routes>
     </div>
   );
