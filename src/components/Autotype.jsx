@@ -5,8 +5,8 @@ const Autotype = () => {
   const [text] = useTypewriter({
     words: ['Spend.', 'Exchange.', 'Save.'], 
     loop: 0, // Loop infinitely
-    typeSpeed: 80,
-    deleteSpeed: 30,
+    typeSpeed: 100,
+    deleteSpeed: 50,
   });
 
   return (
