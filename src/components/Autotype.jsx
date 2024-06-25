@@ -13,7 +13,7 @@ const Autotype = () => {
     <div>
       <h1>
         
-        <span style={{ color: 'red', fontWeight: 'bolder' }}>
+        <span style={{ color: 'rgb(24,204,63)', fontWeight: 'bolder', fontSize:'3rem' }}>
           {text}
         </span>
         <Cursor />
