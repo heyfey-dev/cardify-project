@@ -10,6 +10,7 @@ import Autotype from './components/Autotype';
 
 
 
+
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/API' element={<Apitext/>}></Route>
         <Route path='/auth/reset' element={<Resetpassword/>}></Route>
         <Route path='/type' element={<Autotype/>}></Route>
+        
       </Routes>
     </div>
   );
